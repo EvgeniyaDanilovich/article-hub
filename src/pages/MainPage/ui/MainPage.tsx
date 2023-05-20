@@ -5,8 +5,8 @@ const MainPage = () => {
     const { t, i18n } = useTranslation('main');
 
     return (
-        <div>
-            {t('main page')}
+      <div>
+          {t('main page')}
         </div>
     );
 };
