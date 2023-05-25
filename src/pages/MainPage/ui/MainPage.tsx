@@ -6,9 +6,9 @@ const MainPage = () => {
     const { t, i18n } = useTranslation('main');
 
     return (
-      <div>
-          <BugButton />
-          {t('main page')}
+        <div>
+            <BugButton />
+            {t('main page')}
         </div>
     );
 };

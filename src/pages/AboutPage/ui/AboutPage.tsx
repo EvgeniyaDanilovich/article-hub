@@ -7,9 +7,9 @@ const AboutPage = () => {
     const { t, i18n } = useTranslation('about');
 
     return (
-      <div className="time">
-          {t('about page')}
-          <div>{currentTime}</div>
+        <div className="time">
+            {t('about page')}
+            <div>{currentTime}</div>
         </div>
     );
 };
