@@ -10,7 +10,7 @@ i18n
     .use(initReactI18next)
     .init({
         fallbackLng: 'en',
-        debug: __IS__DEV__,
+        // debug: __IS__DEV__,
 
         interpolation: {
             escapeValue: false,

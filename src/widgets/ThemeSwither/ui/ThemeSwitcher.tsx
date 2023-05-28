@@ -5,7 +5,7 @@ import ThemeIcon from 'shared/assets/icons/theme.svg';
 import { Button, ThemeButton } from 'shared/ui/Button/Button';
 import cls from './ThemeSwitcher.module.scss';
 
-interface ThemeSwitcherProps{
+interface ThemeSwitcherProps {
     className?: string;
 }
 
@@ -14,10 +14,12 @@ export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = ({ className }) => {
 
     return (
         <Button
-          onClick={switchTheme} theme={ThemeButton.CLEAR}
+            onClick={switchTheme}
+            theme={ThemeButton.CLEAR}
             className={classNames(cls.ThemeSwitcher, {}, [])}
         >
-            {theme === Theme.LIGHT ? <ThemeIcon className={cls.light} /> : <ThemeIcon className={cls.dark} /> }
+            {theme === Theme.LIGHT
+                ? <ThemeIcon className={cls.light} /> : <ThemeIcon className={cls.dark} />}
         </Button>
     );
 };
