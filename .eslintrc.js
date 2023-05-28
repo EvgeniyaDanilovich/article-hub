@@ -23,8 +23,10 @@ module.exports = {
         'i18next',
     ],
     rules: {
-        'react/js-indent': [2, 4],
-        'react/js-indent-props': [2, 4],
+        'react/js-indent': 'off',
+        'react/js-indent-props': 'off',
+        // 'react/js-indent': [2, 4],
+        // 'react/js-indent-props': [2, 4],
         'react/jsx-indent-props': [2, 4],
         'react/jsx-indent': [2, 4],
         indent: [2, 4],
