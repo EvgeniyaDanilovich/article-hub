@@ -1,4 +1,3 @@
-
 import { classNames } from './classNames';
 
 describe('classNames', () => {

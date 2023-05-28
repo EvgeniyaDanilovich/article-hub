@@ -4,5 +4,7 @@
   "something went wrong": "Произошла непредвиденая ошибка",
   "reload page": "Перезагрузите страницу",
   "Throw bug": "Создать ошибку",
-  "toggle": "Переключить"
+  "toggle": "Переключить",
+  "Main": "Main",
+  "About": "About"
 }

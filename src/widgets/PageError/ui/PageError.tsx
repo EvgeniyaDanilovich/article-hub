@@ -12,6 +12,7 @@ export const PageError: React.FC<PageErrorProps> = ({ className }) => {
     const { t } = useTranslation();
 
     const onReload = () => {
+        // eslint-disable-next-line no-restricted-globals
         location.reload();
     };
 

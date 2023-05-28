@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 const AboutPage = () => {
     const date = new Date();
     const currentTime = `${date.getFullYear()}, ${date.getMonth()},  ${date.getDate()}`;
-    const { t, i18n } = useTranslation('about');
+    const { t } = useTranslation('about');
 
     return (
         <div className="time">

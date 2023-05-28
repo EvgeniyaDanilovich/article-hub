@@ -1,4 +1,3 @@
-// eslint-disable-next-line react/js-indent
 declare module '*.scss' {
     interface IClassNames {
         [className: string]: string;

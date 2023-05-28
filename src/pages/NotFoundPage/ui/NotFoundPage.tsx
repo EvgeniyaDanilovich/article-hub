@@ -7,7 +7,7 @@ interface NotFoundPageProps{
     className?: string;
 }
 
-export const NotFoundPage: React.FC<NotFoundPageProps> = ({ className }) => {
+export const NotFoundPage: React.FC<NotFoundPageProps> = () => {
     const { t } = useTranslation();
 
     return (
