@@ -31,26 +31,27 @@ export default {
         'src',
     ],
 
-    modulePaths: [
-        '<rootDir>src',
-    ],
+    // modulePaths: [
+    //     '<rootDir>src',
+    // ],
 
     testMatch: [
-        // "**/__tests__/**/*.[jt]s?(x)",
-        // "**/?(*.)+(spec|test).[tj]s?(x)"
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+        '**/__tests__/**/*.[jt]s?(x)',
+        '**/?(*.)+(spec|test).[tj]s?(x)',
+        // '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
 
-    setupFilesAfterEnv: ['<rootDir>config/jest/setupTest.ts'],
+    rootDir: '../../',
+
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
 
     moduleNameMapper: {
         // '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
         //     '<rootDir>/__mocks__/fileMock.js',
-        '\\.s$css$': 'identity-obj-proxy',
+        // '\\.s$css$': 'identity-obj-proxy',
+        '\\.(css|scss)$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
     },
-
-    rootDir: '../../',
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
