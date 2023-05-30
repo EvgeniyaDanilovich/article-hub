@@ -8,5 +8,10 @@ export function buildResolvers(options: BuildOptions): webpack.ResolveOptions {
         modules: [options.paths.src, 'node_modules'],
         mainFiles: ['index'],
         alias: {},
+        fallback: {
+            fs: false,
+            os: false,
+            path: false,
+        },
     };
 }
