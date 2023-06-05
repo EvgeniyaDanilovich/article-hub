@@ -1,8 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Modal } from 'shared/ui/Modal/Modal';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
+import { LoginModal } from 'features/AuthByUserName';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -26,9 +26,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => {
             >
                 {t('Log in')}
             </Button>
-            <Modal isOpen={isOpenModal} onClose={onToggleModal}>
-                45464654654
-            </Modal>
+            <LoginModal isOpen={isOpenModal} onClose={onToggleModal} />
         </div>
     );
 };
