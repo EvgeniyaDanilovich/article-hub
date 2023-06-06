@@ -11,6 +11,10 @@
     outline: none;
 }
 
+.disabled {
+    opacity: 0.5;
+}
+
 .outline {
     background: none;
     border: 1px solid var(--primary-color);

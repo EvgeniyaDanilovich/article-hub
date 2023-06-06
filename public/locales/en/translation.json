@@ -9,5 +9,8 @@
   "short lang": "en",
   "Log in": "Log in",
   "Enter name": "Enter name",
-  "Enter password": "Enter password"
+  "Enter password": "Enter password",
+  "Authorization form": "Authorization form",
+  "Wrong name or password": "Wrong name or password",
+  "Log out": "Log out"
 }

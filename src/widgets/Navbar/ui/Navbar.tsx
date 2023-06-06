@@ -3,6 +3,8 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUserName';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUserAuthData, userActions } from 'entities/User';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -12,10 +14,30 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ className }) => {
     const [isOpenModal, setIsOpenModal] = useState(false);
     const { t } = useTranslation();
+    const authData = useSelector(selectUserAuthData);
+    const dispatch = useDispatch();
 
     const onToggleModal = useCallback(() => {
         setIsOpenModal((prev) => !prev);
     }, []);
+
+    const onLogout = useCallback(() => {
+        dispatch(userActions.logout());
+    }, [dispatch]);
+
+    if (authData) {
+        return (
+            <div className={classNames(cls.Navbar, {}, [])}>
+                <Button
+                    onClick={onLogout}
+                    theme={ButtonTheme.CLEAR}
+                    size={ButtonSize.M}
+                >
+                    {t('Log out')}
+                </Button>
+            </div>
+        );
+    }
 
     return (
         <div className={classNames(cls.Navbar, {}, [])}>

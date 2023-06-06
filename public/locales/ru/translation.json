@@ -8,6 +8,9 @@
   "About": "О нас",
   "short lang": "ru",
   "Log in": "Log in",
-  "Enter name": "Enter name",
-  "Enter password": "Enter password"
+  "Enter name": "Введите текст",
+  "Enter password": "Введите пароль",
+  "Authorization form": "Форма авторизации",
+  "Wrong name or password": "Wrong name or password",
+  "Log out": "Log out"
 }
