@@ -1,3 +1,3 @@
-import { StateScheme } from 'app/providers/StoreProvider';
+import { StateSchema } from 'app/providers/StoreProvider';
 
-export const selectLoginPage = (state: StateScheme) => state?.loginForm;
+export const selectLoginPage = (state: StateSchema) => state?.loginForm;
