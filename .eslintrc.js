@@ -47,7 +47,7 @@ module.exports = {
         'i18next/no-literal-string': ['error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to'],
+                ignoreAttribute: ['data-testid', 'to', 'name'],
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 120 }],
@@ -57,6 +57,7 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off',
         'no-param-reassign': 'off',
         'object-curly-newline': 'off',
+        // 'i18next/no-literal-string': 'off',
     },
     globals: {
         __IS_DEV__: true,
