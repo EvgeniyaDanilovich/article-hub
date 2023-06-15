@@ -8,6 +8,10 @@ interface LoginByUsernameProps {
     password: string;
 }
 
+// TODO: createAsyncThunk
+// createAsyncThunk - это action creator, кот после вызова по итогу возвр action,
+// action попадает в dispatch и мы возвр какие-то данные
+
 export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, { rejectValue: string }>(
     'login/loginByUsername',
     async (authData, thunkAPI) => {
