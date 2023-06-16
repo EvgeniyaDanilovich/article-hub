@@ -1,22 +1,18 @@
-import React, { useState } from 'react';
+import React, { memo, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ThemeSwitcher } from 'widgets/ThemeSwither';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import MainIcon from 'shared/assets/icons/main.svg';
-import AboutIcon from 'shared/assets/icons/about.svg';
+import { SidebarItem } from 'widgets/Sidebar/ui/SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
+import { SidebarItemsList } from '../../model/items';
 
 interface SidebarProps {
     className?: string;
 }
 
-export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
+export const Sidebar = memo(({ className }: SidebarProps) => {
     const [collapsed, setCollapsed] = useState(false);
-    const { t } = useTranslation();
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
@@ -30,18 +26,9 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
             }
         >
             <div className={cls.menu}>
-                <AppLink
-                    theme={AppLinkTheme.SECONDARY}
-                    to={RoutePath.main}
-                    className={cls.link}
-                >
-                    <MainIcon className={cls.icon} />
-                    <span>{t('Main')}</span>
-                </AppLink>
-                <AppLink theme={AppLinkTheme.SECONDARY} to={RoutePath.about} className={cls.link}>
-                    <AboutIcon className={cls.icon} />
-                    <span>{t('About')}</span>
-                </AppLink>
+                {SidebarItemsList.map((item) => (
+                    <SidebarItem item={item} collapsed={collapsed} key={item.path} />
+                ))}
             </div>
 
             <Button
@@ -59,4 +46,4 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
             </div>
         </div>
     );
-};
+});

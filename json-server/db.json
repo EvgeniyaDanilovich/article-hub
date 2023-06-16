@@ -12,5 +12,14 @@
       "password": "123"
     }
   ],
-  "profile": { "name": "typicode" }
+  "profile": {
+    "first": "Eva",
+    "lastname": "Di",
+    "age": 23,
+    "currency": "BYN",
+    "country": "Belarus",
+    "city": "Grodno",
+    "username": "admin",
+    "avatar": "https://image.winudf.com/v2/image1/Y29tLmFoZXB0b24ubmF0dXJld2FsbHBhcGVyc19zY3JlZW5fMF8xNTUwNDMxMzYzXzA3NQ/screen-0.webp?fakeurl=1&type=.webp"
+  }
 }

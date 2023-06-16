@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'shared/ui/Button/Button';
 import cls from './PageError.module.scss';
 
-interface PageErrorProps{
+interface PageErrorProps {
     className?: string;
 }
 
-export const PageError: React.FC<PageErrorProps> = ({ className }) => {
+export const PageError = memo(({ className }: PageErrorProps) => {
     const { t } = useTranslation();
 
     const onReload = () => {
@@ -25,4 +25,4 @@ export const PageError: React.FC<PageErrorProps> = ({ className }) => {
             <Button onClick={onReload}>{t('reload page')}</Button>
         </div>
     );
-};
+});
