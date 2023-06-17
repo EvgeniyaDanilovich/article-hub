@@ -9,7 +9,7 @@ const initialState: ProfileSchema = {
 };
 
 export const profileSlice = createSlice({
-    name: '',
+    name: 'profile',
     initialState,
     reducers: {},
     // extraReducers: (builder) => {
