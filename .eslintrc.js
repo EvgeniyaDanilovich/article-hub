@@ -57,6 +57,7 @@ module.exports = {
         'jsx-a11y/click-events-have-key-events': 'off',
         'no-param-reassign': 'off',
         'object-curly-newline': 'off',
+        'no-undef': 'off',
         // 'i18next/no-literal-string': 'off',
     },
     globals: {

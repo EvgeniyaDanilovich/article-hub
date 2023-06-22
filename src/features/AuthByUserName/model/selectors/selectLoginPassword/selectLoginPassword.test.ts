@@ -1,5 +1,4 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { DeepPartial } from '@reduxjs/toolkit';
 import { selectLoginPassword } from './selectLoginPassword';
 
 describe('selectLoginError', () => {
