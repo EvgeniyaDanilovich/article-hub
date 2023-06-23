@@ -17,3 +17,43 @@
         color: var(--red-dark);
     }
 }
+
+.black {
+    .title {
+        color: #222;
+    }
+
+    .text {
+        color: #222;
+    }
+}
+
+.left {
+    .title {
+        text-align: left;
+    }
+
+    .text {
+        text-align: left;
+    }
+}
+
+.right {
+    .title {
+        text-align: right;
+    }
+
+    .text {
+        text-align: right;
+    }
+}
+
+.center {
+    .title {
+        text-align: center;
+    }
+
+    .text {
+        text-align: center;
+    }
+}

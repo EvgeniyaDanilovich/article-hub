@@ -1,9 +1,17 @@
 {
   "posts": [
-    { "id": "1", "title": "json-server", "author": "typicode" }
+    {
+      "id": "1",
+      "title": "json-server",
+      "author": "typicode"
+    }
   ],
   "comments": [
-    { "id": "1", "body": "some comment", "postId": "1" }
+    {
+      "id": "1",
+      "body": "some comment",
+      "postId": "1"
+    }
   ],
   "users": [
     {
@@ -13,13 +21,25 @@
     }
   ],
   "profile": {
+    "data": {
+      "data": {
+        "first": "Eva2",
+        "lastname": "Di2",
+        "age": 23,
+        "currency": "BYN",
+        "country": "Belarus",
+        "city": "Grodno",
+        "username": "admin",
+        "avatar": "https://image.winudf.com/v2/image1/Y29tLmFoZXB0b24ubmF0dXJld2FsbHBhcGVyc19zY3JlZW5fMF8xNTUwNDMxMzYzXzA3NQ/screen-0.webp?fakeurl=1&type=.webp"
+      },
+      "first": "scsascc",
+      "lastname": "scs",
+      "age": 22,
+      "city": "scsc"
+    },
     "first": "Eva",
     "lastname": "Di",
     "age": 23,
-    "currency": "BYN",
-    "country": "Belarus",
-    "city": "Grodno",
-    "username": "admin",
-    "avatar": "https://image.winudf.com/v2/image1/Y29tLmFoZXB0b24ubmF0dXJld2FsbHBhcGVyc19zY3JlZW5fMF8xNTUwNDMxMzYzXzA3NQ/screen-0.webp?fakeurl=1&type=.webp"
+    "city": "Grodno"
   }
 }

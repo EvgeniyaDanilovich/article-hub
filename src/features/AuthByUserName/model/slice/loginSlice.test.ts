@@ -1,4 +1,4 @@
-import { LoginSchema } from '../types/LoginSchema';
+import { LoginSchema } from 'features/AuthByUserName';
 import { loginActions, loginReducer } from '../slice/loginSlice';
 
 describe('loginSlice', () => {

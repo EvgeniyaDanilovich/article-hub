@@ -1,7 +1,7 @@
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { loginReducer } from 'features/AuthByUserName';
-import { profileReducer } from 'entities/Profile';
 import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { profileReducer } from 'pages/ProfilePage';
 
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
