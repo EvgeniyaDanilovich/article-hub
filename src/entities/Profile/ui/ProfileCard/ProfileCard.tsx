@@ -6,6 +6,7 @@ import { Loader } from 'shared/ui/Loader/Loader';
 import { Text, TextTheme, ThemeAlign } from 'shared/ui/Text/Text';
 import { profileActions } from 'pages/ProfilePage';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../models/type/profile';
 
@@ -23,12 +24,18 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
 
-    const onChangeUsername = useCallback((value: string) => {
+    console.log(data);
+
+    const onChangeFirst = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));
     }, [dispatch]);
 
     const onChangeLastname = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ lastname: value || '' }));
+    }, [dispatch]);
+
+    const onChangeUsername = useCallback((value: string) => {
+        dispatch(profileActions.updateProfile({ username: value || '' }));
     }, [dispatch]);
 
     const onChangeAge = useCallback((value: string) => {
@@ -37,6 +44,10 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
     const onChangeCity = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ city: value || '' }));
+    }, [dispatch]);
+
+    const onChangeAvatar = useCallback((value: string) => {
+        dispatch(profileActions.updateProfile({ avatar: value || '' }));
     }, [dispatch]);
 
     if (isLoading) return <Loader />;
@@ -56,6 +67,10 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
             {readonly
                 ? (
                     <>
+                        {/* {data?.avatar && <div><img src={data?.avatar} alt="Avatar" /></div>} */}
+                        {/* <div><img src={data?.avatar} alt="Avatar" /></div> */}
+                        {/* eslint-disable-next-line i18next/no-literal-string */}
+                        {data?.avatar && <Avatar src={data?.avatar} alt="Avatar" size={150} />}
                         <div className={cls.row}>
                             <Text text={t('Your name')} theme={TextTheme.BLACK} />
                             <Text text={`: ${data?.first}`} theme={TextTheme.BLACK} />
@@ -72,12 +87,16 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                             <Text text={t('City')} theme={TextTheme.BLACK} />
                             <Text text={`: ${data?.city}`} theme={TextTheme.BLACK} />
                         </div>
+                        <div className={cls.row}>
+                            <Text text={t('User name')} theme={TextTheme.BLACK} />
+                            <Text text={`: ${data?.username}`} theme={TextTheme.BLACK} />
+                        </div>
                     </>
                 )
                 : (
                     <>
                         <Input
-                            onChange={onChangeUsername}
+                            onChange={onChangeFirst}
                             type="text"
                             value={formData?.first}
                             className={cls.input}
@@ -100,9 +119,23 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                         <Input
                             onChange={onChangeCity}
                             type="text"
-                            value={formData?.country}
+                            value={formData?.city}
                             className={cls.input}
                             placeholder={t('City')}
+                        />
+                        <Input
+                            onChange={onChangeUsername}
+                            type="text"
+                            value={formData?.username}
+                            className={cls.input}
+                            placeholder={t('Username')}
+                        />
+                        <Input
+                            onChange={onChangeAvatar}
+                            type="text"
+                            value={formData?.avatar}
+                            className={cls.input}
+                            placeholder={t('Enter link to avatar')}
                         />
                     </>
                 )}

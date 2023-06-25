@@ -20,7 +20,9 @@ export const profileSlice = createSlice({
             state.readonly = action.payload;
         },
         cancelEdit(state) {
-            state.form = state.data;
+            state.form = {
+                ...state.data,
+            };
             state.readonly = true;
         },
         updateProfile: (state, action: PayloadAction<Profile>) => {
@@ -37,6 +39,7 @@ export const profileSlice = createSlice({
         });
         builder.addCase(fetchProfileData.fulfilled, (state, action: PayloadAction<Profile>) => {
             state.isLoading = false;
+            console.log(action.payload);
             state.data = action.payload;
             state.form = action.payload;
             state.readonly = true;

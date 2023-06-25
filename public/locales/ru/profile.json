@@ -9,5 +9,8 @@
   "An error occurred while loading the profile": "An error occurred while loading the profile",
   "Age": "Age",
   "Country": "Country",
-  "City": "City"
+  "City": "City",
+  "Username": "Username",
+  "User name": "User name",
+  "Enter link to avatar": "Enter link to avatar"
 }
