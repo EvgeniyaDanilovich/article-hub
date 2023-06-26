@@ -58,6 +58,7 @@ module.exports = {
         'no-param-reassign': 'off',
         'object-curly-newline': 'off',
         'no-undef': 'off',
+        'arrow-body-style': 'off',
         // 'i18next/no-literal-string': 'off',
     },
     globals: {
