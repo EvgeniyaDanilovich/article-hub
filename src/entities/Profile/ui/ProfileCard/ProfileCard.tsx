@@ -7,6 +7,9 @@ import { Text, TextTheme, ThemeAlign } from 'shared/ui/Text/Text';
 import { profileActions } from 'pages/ProfilePage';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Currency, CurrencySelect } from 'entities/Currency';
+import { Country, CountrySelect } from 'entities/Country';
+import { Select } from 'shared/ui/Select/Select';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../models/type/profile';
 
@@ -50,6 +53,16 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         dispatch(profileActions.updateProfile({ avatar: value || '' }));
     }, [dispatch]);
 
+    const onChangeCurrency = useCallback((currency: Currency) => {
+        if (currency) {
+            dispatch(profileActions.updateProfile({ currency }));
+        }
+    }, [dispatch]);
+
+    const onChangeCountry = useCallback((country: Country) => {
+        dispatch(profileActions.updateProfile({ country }));
+    }, [dispatch]);
+
     if (isLoading) return <Loader />;
     if (error) {
         return (
@@ -67,8 +80,6 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
             {readonly
                 ? (
                     <>
-                        {/* {data?.avatar && <div><img src={data?.avatar} alt="Avatar" /></div>} */}
-                        {/* <div><img src={data?.avatar} alt="Avatar" /></div> */}
                         {/* eslint-disable-next-line i18next/no-literal-string */}
                         {data?.avatar && <Avatar src={data?.avatar} alt="Avatar" size={150} />}
                         <div className={cls.row}>
@@ -90,6 +101,14 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                         <div className={cls.row}>
                             <Text text={t('User name')} theme={TextTheme.BLACK} />
                             <Text text={`: ${data?.username}`} theme={TextTheme.BLACK} />
+                        </div>
+                        <div className={cls.row}>
+                            <Text text={t('Currency')} theme={TextTheme.BLACK} />
+                            <Text text={`: ${data?.currency}`} theme={TextTheme.BLACK} />
+                        </div>
+                        <div className={cls.row}>
+                            <Text text={t('Country')} theme={TextTheme.BLACK} />
+                            <Text text={`: ${data?.country}`} theme={TextTheme.BLACK} />
                         </div>
                     </>
                 )
@@ -137,6 +156,19 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                             className={cls.input}
                             placeholder={t('Enter link to avatar')}
                         />
+                        {/* <Select */}
+                        {/*     options={[ */}
+                        {/*         { value: Currency.BYN, content: Currency.BYN }, */}
+                        {/*         { value: Currency.RUB, content: Currency.RUB }, */}
+                        {/*         { value: Currency.USD, content: Currency.USD }, */}
+                        {/*     ]} */}
+                        {/*     value={formData?.currency} */}
+                        {/*     label={t('Currency')} */}
+                        {/*     // @ts-ignore */}
+                        {/*     onChange={onChangeCurrency} */}
+                        {/* /> */}
+                        <CurrencySelect value={formData?.currency} onChange={onChangeCurrency} />
+                        <CountrySelect value={formData?.country} onChange={onChangeCountry} />
                     </>
                 )}
         </div>

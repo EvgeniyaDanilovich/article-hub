@@ -8,10 +8,12 @@ export const updateProfileData = createAsyncThunk<Profile, void, ThunkConfig<str
     async (_, thunkAPI) => {
         // const formData = thunkAPI.getState().profile?.form;
         const formData = selectProfileForm(thunkAPI.getState());
-        console.log(formData);
+        // console.log(`response: ${formData}`);
 
         try {
             const response = await thunkAPI.extra.api.put('/profile', formData);
+
+            console.log(`response: ${response}`);
 
             if (!response.data) {
                 throw new Error();
