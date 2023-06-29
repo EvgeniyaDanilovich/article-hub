@@ -9,7 +9,6 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Currency, CurrencySelect } from 'entities/Currency';
 import { Country, CountrySelect } from 'entities/Country';
-import { Select } from 'shared/ui/Select/Select';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../models/type/profile';
 
@@ -26,8 +25,6 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
     const { className, data, formData, isLoading, error, readonly } = props;
     const { t } = useTranslation('profile');
     const dispatch = useAppDispatch();
-
-    console.log(data);
 
     const onChangeFirst = useCallback((value: string) => {
         dispatch(profileActions.updateProfile({ first: value || '' }));
@@ -156,17 +153,6 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                             className={cls.input}
                             placeholder={t('Enter link to avatar')}
                         />
-                        {/* <Select */}
-                        {/*     options={[ */}
-                        {/*         { value: Currency.BYN, content: Currency.BYN }, */}
-                        {/*         { value: Currency.RUB, content: Currency.RUB }, */}
-                        {/*         { value: Currency.USD, content: Currency.USD }, */}
-                        {/*     ]} */}
-                        {/*     value={formData?.currency} */}
-                        {/*     label={t('Currency')} */}
-                        {/*     // @ts-ignore */}
-                        {/*     onChange={onChangeCurrency} */}
-                        {/* /> */}
                         <CurrencySelect value={formData?.currency} onChange={onChangeCurrency} />
                         <CountrySelect value={formData?.country} onChange={onChangeCountry} />
                     </>

@@ -12,7 +12,6 @@ export const fetchProfileData = createAsyncThunk<Profile, void, ThunkConfig<stri
                 throw new Error();
             }
 
-            console.log(`RESPONSE: ${response.data}`);
             return response.data;
         } catch (e) {
             return thunkAPI.rejectWithValue('Error');
