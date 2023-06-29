@@ -39,11 +39,11 @@
     },
     "first": "Eva",
     "lastname": "Di",
-    "age": 25,
+    "age": 23,
     "city": "Grodno",
     "username": "admin",
     "avatar": "https://cdn-icons-png.flaticon.com/512/5963/5963532.png",
-    "currency": "BYN",
+    "currency": "USD",
     "country": "Belarus"
   }
 }

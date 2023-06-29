@@ -13,5 +13,10 @@
   "Username": "Username",
   "User name": "User name",
   "Enter link to avatar": "Enter link to avatar",
-  "Currency": "Currency"
+  "Currency": "Currency",
+  "Incorrect user data": "Incorrect user data",
+  "Incorrect age": "Incorrect age",
+  "Incorrect country": "Incorrect country",
+  "Server error": "Server error",
+  "No data": "No data"
 }
