@@ -21,7 +21,7 @@
 .content {
     padding: 20px;
     width: 400px;
-    background: #ffe0e0;
+    background: var(--inverted-bg-color);
     border-radius: 12px;
     transition: all 0.3s;
     transform: scale(0.5);
