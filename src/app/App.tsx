@@ -14,10 +14,11 @@ const App = () => {
 
     useEffect(() => {
         dispatch(userActions.initAuthData());
-    }, [dispatch]);
+        document.body.className = theme || 'app_light_theme';
+    }, [dispatch, theme]);
 
     return (
-        <div className={classNames('app', {}, [theme])}>
+        <div className={classNames('app', {}, [])}>
             <Suspense fallback="">
                 <Navbar />
                 <div className="content-page">

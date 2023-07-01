@@ -20,7 +20,7 @@ export const Modal: React.FC<ModalProps> = ({ lazy, children, isOpen, onClose })
     const [isClosing, setIsClosing] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
     const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
-    const { theme } = useTheme();
+    // const { theme } = useTheme();
 
     const closeHandler = useCallback(() => {
         setIsClosing(true);
@@ -74,7 +74,7 @@ export const Modal: React.FC<ModalProps> = ({ lazy, children, isOpen, onClose })
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [cls.close, theme])}>
+            <div className={classNames(cls.Modal, mods, [cls.close])}>
                 <div onClick={closeHandler} className={cls.overlay}>
                     <div onClick={stopClosing} className={cls.content}>
                         {children}

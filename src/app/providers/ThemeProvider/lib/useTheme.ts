@@ -26,7 +26,7 @@ export const useTheme = (): UseThemeResult => {
         }
 
         setTheme?.(newTheme);
-
+        document.body.className = newTheme;
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
     };
 
