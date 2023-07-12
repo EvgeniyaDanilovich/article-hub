@@ -5,18 +5,6 @@ import { PageLoader } from 'widgets/PageLoader';
 import { RequireAuth } from 'app/providers/router/ui/RequireAuth';
 
 const AppRouter = () => {
-    // const isAuth = useSelector(selectUserAuthData);
-    //
-    // const routes = useMemo(() => {
-    //     return Object.values(routeConfig).filter((route) => {
-    //         if (route.authOnly && !isAuth) {
-    //             return false;
-    //         }
-    //
-    //         return true;
-    //     });
-    // }, [isAuth]);
-
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
         const element = (<div className="page-wrapper">{route.element}</div>);
 
@@ -33,13 +21,6 @@ const AppRouter = () => {
         <Suspense fallback={<PageLoader />}>
             <Routes>
                 {Object.values(routeConfig).map(renderWithWrapper)}
-                {/* {routes.map((route) => ( */}
-                {/*     <Route */}
-                {/*         key={route.path} */}
-                {/*         path={route.path} */}
-                {/*         element={<div className="page-wrapper">{route.element}</div>} */}
-                {/*     /> */}
-                {/* ))} */}
             </Routes>
         </Suspense>
     );
