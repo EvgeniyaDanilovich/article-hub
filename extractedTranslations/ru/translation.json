@@ -1,6 +1,12 @@
 {
+  "": "",
   "Age": "Age",
+  "An error occurred while loading the article": "An error occurred while loading the article",
   "An error occurred while loading the profile": "An error occurred while loading the profile",
+  "Article Details": "Article Details",
+  "Article not found": "Article not found",
+  "ArticleDetailsPage": "ArticleDetailsPage",
+  "Articles": "Articles",
   "Authorization form": "Authorization form",
   "Cancel": "Cancel",
   "City": "City",
