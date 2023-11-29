@@ -3,7 +3,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
-import { Text, TextTheme, ThemeAlign } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { profileActions } from 'pages/ProfilePage';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
@@ -67,7 +67,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                 title={t('An error occurred while loading the profile')}
                 text={t('Reload page')}
                 theme={TextTheme.ERROR}
-                align={ThemeAlign.CENTER}
+                align={TextAlign.CENTER}
             />
         );
     }

@@ -9,7 +9,7 @@ interface AvatarProps {
     size?: number;
 }
 
-export const Avatar: React.FC<AvatarProps> = ({ className, src, alt, size }) => {
+export const Avatar: React.FC<AvatarProps> = ({ className, src, alt = 'Avatar', size }) => {
     const styles = useMemo<CSSProperties>(() => ({
         width: size,
         height: size,

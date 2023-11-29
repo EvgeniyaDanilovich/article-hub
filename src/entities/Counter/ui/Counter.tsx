@@ -12,6 +12,8 @@ export const Counter: React.FC<CounterProps> = () => {
     const value = useSelector(getCounterValue);
     const dispatch = useDispatch();
 
+    // const {} = filmApi.useG
+
     const onIncrement = () => {
         dispatch(counterActions.increment());
     };
