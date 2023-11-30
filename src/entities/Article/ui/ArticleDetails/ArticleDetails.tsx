@@ -10,6 +10,7 @@ import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import cls from './ArticleDetails.module.scss';
 import { articleDetailsReducer } from '../../model/slice/ArticleDetailsSlice';
 import {
@@ -51,11 +52,15 @@ export const ArticleDetails = memo(({ className, articleId }: ArticleDetailsProp
         }
     }, []);
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(articleId));
-        }
-    }, [articleId, dispatch]);
+    // useEffect(() => {
+    //     if (__PROJECT__ !== 'storybook') {
+    //         dispatch(fetchArticleById(articleId));
+    //     }
+    // }, [articleId, dispatch]);
+
+    useInitialEffect(() => {
+        dispatch(fetchArticleById(articleId));
+    });
 
     let content;
 

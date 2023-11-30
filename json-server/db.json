@@ -11,13 +11,15 @@
       "id": "1",
       "username": "eva",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Dog-512.png"
     },
     {
       "id": "2",
       "username": "katya",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Dog-512.png"
     }
   ],
   "profile": {
@@ -120,7 +122,7 @@
   "comments": [
     {
       "id": "1",
-      "text": "some comment",
+      "text": "some comment1",
       "articleId": "1",
       "userId": "1"
     },
@@ -128,13 +130,13 @@
       "id": "2",
       "text": "some comment 2",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     },
     {
       "id": "3",
       "text": "some comment 3",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     }
   ]
 }
