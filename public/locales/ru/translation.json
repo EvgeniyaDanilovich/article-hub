@@ -8,11 +8,13 @@
   "About": "О нас",
   "Profile": "Профиль",
   "Articles": "Статьи",
-  "short lang": "ru",
+  "short lang": "ру",
   "Log in": "Войти",
   "Enter name": "Введите текст",
   "Enter password": "Введите пароль",
   "Authorization form": "Форма авторизации",
   "Wrong name or password": "Не правильный логин или пароль",
-  "Log out": "Выйти"
+  "Log out": "Выйти",
+  "Enter comment text": "Введите текст комментария",
+  "Send": "Отправить"
 }

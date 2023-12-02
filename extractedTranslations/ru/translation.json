@@ -1,5 +1,6 @@
 {
   "": "",
+  "Add comment": "Add comment",
   "Age": "Age",
   "An error occurred while loading the article": "An error occurred while loading the article",
   "An error occurred while loading the profile": "An error occurred while loading the profile",
@@ -14,6 +15,7 @@
   "Country": "Country",
   "Currency": "Currency",
   "Edit": "Edit",
+  "Enter comment text": "Enter comment text",
   "Enter link to avatar": "Enter link to avatar",
   "Enter name": "Enter name",
   "Enter password": "Enter password",
@@ -27,6 +29,7 @@
   "Profile": "Profile",
   "Reload page": "Reload page",
   "Save": "Save",
+  "Send": "Send",
   "Server error": "Server error",
   "Throw bug": "Throw bug",
   "User name": "User name",

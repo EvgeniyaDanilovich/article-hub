@@ -1,4 +1,4 @@
-import React, { memo, useEffect } from 'react';
+import React, { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux';
 import { ProfileCard } from 'entities/Profile';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { useParams } from 'react-router-dom';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import cls from './ProfilePage.module.scss';
 import { selectProfileData } from '../models/selectors/selectProfileData/selectProfileData';
 import { selectProfileIsLoading } from '../models/selectors/selectProfileIsLoading/selectProfileIsLoading';
@@ -30,6 +32,7 @@ const ProfilePage = memo((props: ProfilePageProps) => {
     const { className } = props;
     const dispatch = useAppDispatch();
     const { t } = useTranslation('profile');
+    const { id } = useParams<{ id: string }>();
 
     const data = useSelector(selectProfileData);
     const formData = useSelector(selectProfileForm);
@@ -46,11 +49,11 @@ const ProfilePage = memo((props: ProfilePageProps) => {
         [ValidateProfileErrors.NO_DATA]: t('No data'),
     };
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData());
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
         }
-    }, [dispatch]);
+    });
 
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>

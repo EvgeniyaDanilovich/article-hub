@@ -21,6 +21,7 @@ export default meta;
 type Story = StoryObj<typeof ProfileCard>;
 
 const dataProfile: Profile = {
+    id: '1',
     first: 'Eva',
     lastname: 'Di',
     age: 23,
