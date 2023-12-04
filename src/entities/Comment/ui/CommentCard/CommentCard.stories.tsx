@@ -1,11 +1,10 @@
 import type { Meta } from '@storybook/react';
 import { StoryObj } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
-import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator';
 import { CommentCard } from './CommentCard';
 
 const meta: Meta<typeof CommentCard> = {
-    title: '/CommentCard',
+    title: 'entities/Comment/CommentCard',
     component: CommentCard,
     tags: ['autodocs'],
     argTypes: {
@@ -18,11 +17,24 @@ export default meta;
 type Story = StoryObj<typeof CommentCard>;
 
 export const Primary: Story = {
-    args: {},
+    args: {
+        comment: {
+            id: '1',
+            user: {
+                id: '1',
+                username: 'Eva',
+                avatar: 'https://img.freepik.com/premium-vector/cute-horse-ponny-colourfull-vector_636967-241.jpg',
+            },
+            text: 'Comment 1',
+            articleId: '1',
+        },
+    },
 };
 
-export const Dark: Story = {
-    args: {},
+export const Loading: Story = {
+    args: {
+        isLoading: true,
+    },
 };
 
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+// Primary.decorators = [StoreDecorator({})];

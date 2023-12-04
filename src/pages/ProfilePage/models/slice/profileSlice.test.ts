@@ -6,6 +6,7 @@ import { Currency } from 'entities/Currency';
 import { updateProfileData } from 'pages/ProfilePage/models/services/updateProfileData/updateProfileData';
 
 const dataProfile: Profile = {
+    id: '1',
     first: 'Eva',
     lastname: 'Di',
     age: 23,

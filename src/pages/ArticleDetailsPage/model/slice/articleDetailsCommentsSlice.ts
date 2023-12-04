@@ -15,7 +15,7 @@ export const selectArticleComments = commentsAdapter.getSelectors<StateSchema>(
 const articleDetailsCommentsSlice = createSlice({
     name: 'articleDetailsComments',
     initialState: commentsAdapter.getInitialState<ArticleDetailsCommentsSchema>({
-        error: undefined,
+        error: '',
         isLoading: false,
         ids: [],
         entities: {},
@@ -34,6 +34,18 @@ const articleDetailsCommentsSlice = createSlice({
             state.isLoading = false;
             state.error = action.payload;
         });
+
+        // builder.addCase(addCommentForArticle.pending, (state) => {
+        //     state.error = undefined;
+        //     state.isLoading = true;
+        // });
+        // builder.addCase(addCommentForArticle.fulfilled, (state, action: PayloadAction<Comment>) => {
+        //     state.isLoading = false;
+        // });
+        // builder.addCase(addCommentForArticle.rejected, (state, action) => {
+        //     state.isLoading = false;
+        //     state.error = action.payload;
+        // });
     },
 });
 

@@ -7,6 +7,7 @@ import { selectProfileForm } from './selectProfileForm';
 describe('selectProfileForm', () => {
     test('should return form data', () => {
         const dataProfile: Profile = {
+            id: '1',
             first: 'Eva',
             lastname: 'Di',
             age: 23,

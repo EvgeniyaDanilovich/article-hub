@@ -1,4 +1,4 @@
- {
+{
   "posts": [
     {
       "id": "1",
@@ -22,32 +22,30 @@
       "avatar": "https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Dog-512.png"
     }
   ],
-  "profile": {
-    "data": {
-      "data": {
-        "first": "Eva2",
-        "lastname": "Di2",
-        "age": 23,
-        "currency": "BYN",
-        "country": "Belarus",
-        "city": "Grodno",
-        "username": "admin",
-        "avatar": "https://image.winudf.com/v2/image1/Y29tLmFoZXB0b24ubmF0dXJld2FsbHBhcGVyc19zY3JlZW5fMF8xNTUwNDMxMzYzXzA3NQ/screen-0.webp?fakeurl=1&type=.webp"
-      },
-      "first": "scsascc",
-      "lastname": "scs",
-      "age": 22,
-      "city": "scsc"
+  "profile": [
+    {
+      "id": "1",
+      "first": "Evgeniya",
+      "lastname": "Di",
+      "age": 23,
+      "city": "Grodno",
+      "username": "admin",
+      "avatar": "https://image.winudf.com/v2/image1/Y29tLmFoZXB0b24ubmF0dXJld2FsbHBhcGVyc19zY3JlZW5fMF8xNTUwNDMxMzYzXzA3NQ/screen-0.webp?fakeurl=1&type=.webp",
+      "currency": "USD",
+      "country": "Belarus"
     },
-    "first": "Eva",
-    "lastname": "Di",
-    "age": 23,
-    "city": "Grodno",
-    "username": "admin",
-    "avatar": "https://cdn-icons-png.flaticon.com/512/5963/5963532.png",
-    "currency": "USD",
-    "country": "Belarus"
-  },
+    {
+      "id": "2",
+      "first": "katya",
+      "lastname": "Shla",
+      "age": 28,
+      "city": "Grodno",
+      "username": "somepersone",
+      "avatar": "https://img.freepik.com/premium-vector/cute-horse-ponny-colourfull-vector_636967-241.jpg",
+      "currency": "USD",
+      "country": "Belarus"
+    }
+  ],
   "articles": [
     {
       "id": "1",
@@ -56,7 +54,9 @@
       "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
       "views": 1022,
       "createdAt": "26.02.2022",
-      "type": ["IT"],
+      "type": [
+        "IT"
+      ],
       "blocks": [
         {
           "id": "1",
@@ -137,6 +137,39 @@
       "text": "some comment 3",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "sdcsdc",
+      "id": "2tMbgBr"
+    },
+    {
+      "id": "DBK5pA0"
+    },
+    {
+      "id": "xy-Kj6L"
+    },
+    {
+      "id": "YulhV2f"
+    },
+    {
+      "id": "YMmJa3p"
+    },
+    {
+      "id": "ZOfAJPG"
+    },
+    {
+      "id": "cGwL_i2"
+    },
+    {
+      "id": "lW-BKLF"
+    },
+    {
+      "id": "4LdnIz8"
+    },
+    {
+      "id": "IHEXjBl"
     }
   ]
 }

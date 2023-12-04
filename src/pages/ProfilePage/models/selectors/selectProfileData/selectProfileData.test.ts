@@ -7,6 +7,7 @@ import { selectProfileData } from './selectProfileData';
 describe('selectProfileData', () => {
     test('should return data', () => {
         const dataProfile: Profile = {
+            id: '1',
             first: 'Eva',
             lastname: 'Di',
             age: 23,
