@@ -1,12 +1,20 @@
-import React, { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Article, ArticleList, ArticleView } from 'entities/Article';
-import cls from './ArticlesPage.module.scss';
+import type { Meta } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
+import { ArticleList } from './ArticleList';
+import { Article, ArticleView } from '../../model/types/article';
 
-interface ArticlesPageProps {
-    className?: string;
-}
+const meta: Meta<typeof ArticleList> = {
+    title: 'entities/Article/ArticleList',
+    component: ArticleList,
+    tags: ['autodocs'],
+    argTypes: {
+        // backgroundColor: { control: 'color' },
+    },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof ArticleList>;
 
 const article = {
     id: '1',
@@ -133,19 +141,32 @@ const article = {
     ],
 } as Article;
 
-const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
-    const { t } = useTranslation('article');
-    return (
-        <div className={classNames(cls.ArticlesPage, {}, [className])}>
-            {t('Articles')}
-            <ArticleList
-                isLoading
-                view={ArticleView.LARGE}
-                articles={new Array(16)
-                    .fill(0).map((item, index) => ({ ...article, id: String(index) }))}
-            />
-        </div>
-    );
-});
+export const SmallView: Story = {
+    args: {
+        articles: [article, article, article],
+        view: ArticleView.SMALL,
+    },
+};
 
-export default ArticlesPage;
+export const LargeView: Story = {
+    args: {
+        articles: [article, article, article],
+        view: ArticleView.LARGE,
+    },
+};
+
+export const IsLoadingSmallView: Story = {
+    args: {
+        articles: [article, article, article],
+        view: ArticleView.SMALL,
+        isLoading: true,
+    },
+};
+
+export const IsLoadingLargeView: Story = {
+    args: {
+        articles: [article, article, article],
+        view: ArticleView.LARGE,
+        isLoading: true,
+    },
+};

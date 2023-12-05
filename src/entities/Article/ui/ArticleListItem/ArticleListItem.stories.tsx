@@ -1,12 +1,20 @@
-import React, { memo } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
-import { Article, ArticleList, ArticleView } from 'entities/Article';
-import cls from './ArticlesPage.module.scss';
+import type { Meta } from '@storybook/react';
+import { StoryObj } from '@storybook/react';
+import { Article, ArticleView } from 'entities/Article';
+import { ArticleListItem } from './ArticleListItem';
 
-interface ArticlesPageProps {
-    className?: string;
-}
+const meta: Meta<typeof ArticleListItem> = {
+    title: 'entities/Article/ArticleListItem',
+    component: ArticleListItem,
+    tags: ['autodocs'],
+    argTypes: {
+        // backgroundColor: { control: 'color' },
+    },
+};
+
+export default meta;
+
+type Story = StoryObj<typeof ArticleListItem>;
 
 const article = {
     id: '1',
@@ -133,19 +141,16 @@ const article = {
     ],
 } as Article;
 
-const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
-    const { t } = useTranslation('article');
-    return (
-        <div className={classNames(cls.ArticlesPage, {}, [className])}>
-            {t('Articles')}
-            <ArticleList
-                isLoading
-                view={ArticleView.LARGE}
-                articles={new Array(16)
-                    .fill(0).map((item, index) => ({ ...article, id: String(index) }))}
-            />
-        </div>
-    );
-});
+export const SmallView: Story = {
+    args: {
+        article,
+        view: ArticleView.SMALL,
+    },
+};
 
-export default ArticlesPage;
+export const LargeView: Story = {
+    args: {
+        article,
+        view: ArticleView.LARGE,
+    },
+};

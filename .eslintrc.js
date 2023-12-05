@@ -59,6 +59,7 @@ module.exports = {
         'object-curly-newline': 'off',
         'no-undef': 'off',
         'arrow-body-style': 'off',
+        'react/no-array-index-key': 'off',
         // 'i18next/no-literal-string': 'off',
     },
     globals: {
