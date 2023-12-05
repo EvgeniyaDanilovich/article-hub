@@ -58,7 +58,7 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+        <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <Button onClick={onBackToList}>{t('Back to list')}</Button>
                 <ArticleDetails articleId={id} />
