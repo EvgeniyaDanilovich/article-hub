@@ -1,7 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from 'app/providers/StoreProvider';
 import { Comment } from 'entities/Comment';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { selectUserAuthData } from 'entities/User';
 import { selectArticleDetailsData } from 'entities/Article/model/selectors/articleDetails';
 import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchCommentsByArticleId';
@@ -9,7 +8,6 @@ import { fetchCommentsByArticleId } from '../fetchCommentsByArticleId/fetchComme
 export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfig<string>>(
     'articleDetails/addCommentForArticle',
     async (commentText, thunkAPI) => {
-        const dispatch = useAppDispatch();
         const userData = selectUserAuthData(thunkAPI.getState());
         const article = selectArticleDetailsData(thunkAPI.getState());
 
@@ -28,7 +26,7 @@ export const addCommentForArticle = createAsyncThunk<Comment, string, ThunkConfi
                 throw new Error();
             }
 
-            dispatch(fetchCommentsByArticleId(article?.id));
+            thunkAPI.dispatch(fetchCommentsByArticleId(article?.id));
 
             return response.data;
         } catch (e: any) {

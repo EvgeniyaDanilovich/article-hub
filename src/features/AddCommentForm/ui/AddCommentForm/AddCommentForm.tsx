@@ -9,7 +9,6 @@ import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/Dynamic
 import { selectAddCommentFormCommentText } from '../../models/selectors/addCommentForm';
 import { addCommentFormActions, addCommentFormReducer } from '../../models/slice/addCommentFormSlice';
 import cls from './AddCommentForm.module.scss';
-import { sendComment } from '../../models/services/sendComment';
 
 export interface AddCommentFormProps {
     className?: string;
@@ -30,33 +29,9 @@ const AddCommentForm = memo(({ onSendComment, className }: AddCommentFormProps) 
     }, [dispatch]);
 
     const onSendHandler = useCallback(async () => {
-        const data = {
-            articleId: '1',
-            userId: '1',
-            text: 'commentText - dds',
-        };
-
-        // try {
-        //     const response = await fetch('http://localhost:8000/comments', {
-        //         method: 'POST',
-        //         headers: {
-        //             authorization: localStorage.getItem(USER_LOCALSTORAGE_KEY) || '',
-        //         },
-        //         body: JSON.stringify(data),
-        //     });
-        //
-        //     // dispatch(addCommentFormActions.setCommentText(''));
-        //     // console.log(response.json());
-        //     return response.data;
-        // } catch (e) {
-        //     // console.log(e);
-        // }
-
-        dispatch(sendComment());
-        // console.log(commentText);
         onSendComment(commentText || '');
-        // onChange('');
-    }, [commentText, dispatch, onSendComment]);
+        onChange('');
+    }, [commentText, onChange, onSendComment]);
 
     return (
         <DynamicModuleLoader reducers={reducers}>

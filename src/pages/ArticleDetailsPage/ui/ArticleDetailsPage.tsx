@@ -41,7 +41,6 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     });
 
     const onSendComment = useCallback((commentText: string) => {
-        console.log(commentText);
         dispatch(addCommentForArticle(commentText));
     }, [dispatch]);
 
