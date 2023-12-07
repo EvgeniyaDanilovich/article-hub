@@ -31,10 +31,11 @@ export const ViewSwitcher = memo(({ view, onViewClick, className }: ViewSwitcher
 
     return (
         <div className={classNames(cls.ViewSwitcher, {}, [className])}>
-            {viewTypes.map((viewType) => (
+            {viewTypes.map((viewType, index) => (
                 <Button
                     theme={ButtonTheme.CLEAR}
                     onClick={onClick(viewType.view)}
+                    key={index}
                 >
                     <Icon
                         Svg={viewType.icon}

@@ -9,6 +9,7 @@ import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { useParams } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Page } from 'shared/ui/Page/Page';
 import cls from './ProfilePage.module.scss';
 import { selectProfileData } from '../models/selectors/selectProfileData/selectProfileData';
 import { selectProfileIsLoading } from '../models/selectors/selectProfileIsLoading/selectProfileIsLoading';
@@ -57,13 +58,13 @@ const ProfilePage = memo((props: ProfilePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
-            <div className={classNames(cls.ProfilePage, {}, [className])}>
+            <Page className={classNames(cls.ProfilePage, {}, [className])}>
                 <ProfilePageHeader />
                 {validateErrors?.length && validateErrors.map((error: ValidateProfileErrors) => (
                     <Text key={error} theme={TextTheme.ERROR} text={validateErrorTranslates[error]} />
                 ))}
                 <ProfileCard readonly={readonly} data={data} formData={formData} isLoading={isLoading} error={error} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 });

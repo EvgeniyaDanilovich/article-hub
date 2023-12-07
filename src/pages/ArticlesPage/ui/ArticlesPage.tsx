@@ -7,14 +7,12 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ViewSwitcher } from 'widgets/ViewSwitcher';
+import { Page } from 'shared/ui/Page/Page';
+import { fetchNextArticlesPage } from 'pages/ArticlesPage/model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import cls from './ArticlesPage.module.scss';
 import { articlesPageActions, articlesPageReducer, selectArticles } from '../model/slices/articlesPageSlice';
-import { fetchArticleList } from '../model/services/fetchArticleList';
-import {
-    selectArticlePageError,
-    selectArticlePageIsLoading,
-    selectArticlePageView,
-} from '../model/selectors/articlesPageSelectors';
+import { fetchArticleList } from '../model/services/fetchArticleList/fetchArticleList';
+import { selectArticlePageIsLoading, selectArticlePageView } from '../model/selectors/articlesPageSelectors';
 
 interface ArticlesPageProps {
     className?: string;
@@ -29,25 +27,31 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
     const dispatch = useAppDispatch();
     const articles = useSelector(selectArticles.selectAll);
     const isLoading = useSelector(selectArticlePageIsLoading);
-    const error = useSelector(selectArticlePageError);
     const view = useSelector(selectArticlePageView);
 
     useInitialEffect(() => {
-        dispatch(fetchArticleList());
         dispatch(articlesPageActions.initState());
+        dispatch(fetchArticleList(1));
     });
-
-    // if (error) {
-    //     return <Text text={t('Something went wrong. Read page')} theme={TextTheme.ERROR} />;
-    // }
 
     const onViewClick = useCallback((view: ArticleView) => {
         dispatch(articlesPageActions.setView(view));
     }, [dispatch]);
 
+    const onLoadNextPart = useCallback(() => {
+        dispatch(fetchNextArticlesPage());
+    }, [dispatch]);
+
+    // if (error) {
+    //     return <Text text={t('Something went wrong. Read page')} theme={TextTheme.ERROR} />;
+    // }
+
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ArticlesPage, {}, [className])}>
+            <Page
+                onScrollEnd={onLoadNextPart}
+                className={classNames(cls.ArticlesPage, {}, [className])}
+            >
                 {t('Articles')}
                 <ViewSwitcher view={view} onViewClick={onViewClick} />
                 <ArticleList
@@ -55,7 +59,7 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
                     view={view}
                     articles={articles}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
 
     );

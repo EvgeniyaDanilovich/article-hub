@@ -2,6 +2,7 @@ import React, { memo, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BugButton } from 'app/providers/ErrorBoundary';
 import { Counter } from 'entities/Counter';
+import { Page } from 'shared/ui/Page/Page';
 import cls from './MainPage.module.scss';
 
 const MainPage = memo(() => {
@@ -27,7 +28,7 @@ const MainPage = memo(() => {
     }, 1000);
 
     return (
-        <div>
+        <Page>
             <BugButton />
             {t('main page')}
             <Counter />
@@ -36,7 +37,7 @@ const MainPage = memo(() => {
                 <div>:</div>
                 <div className={cls.sec}>{sec}</div>
             </div>
-        </div>
+        </Page>
     );
 });
 

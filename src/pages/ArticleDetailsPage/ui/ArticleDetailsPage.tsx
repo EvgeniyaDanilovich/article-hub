@@ -12,6 +12,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/AddCommentForm';
 import { Button } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 import { selectArticleCommentsError, selectArticleCommentsIsLoading } from '../model/selectors/comments';
 import { articleDetailsCommentsReducer, selectArticleComments } from '../model/slice/articleDetailsCommentsSlice';
@@ -49,22 +50,22 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     }, [navigate]);
 
     if (commentsError) {
-        return (<div>{commentsError}</div>);
+        return (<Page>{commentsError}</Page>);
     }
 
     if (!id) {
-        return (<div>{t('Article not found')}</div>);
+        return (<Page>{t('Article not found')}</Page>);
     }
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <div className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
                 <Button onClick={onBackToList}>{t('Back to list')}</Button>
                 <ArticleDetails articleId={id} />
                 <Text title={t('Comments')} className={cls.commentTitle} />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentsList comments={comments} isLoading={commentsIsLoading} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 });
