@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { USER_LOCALSTORAGE_KEY } from 'shared/const/localStorage';
+import { updateUserAvatar } from 'entities/User';
 import { User, UserScheme } from '../types/user';
 
 const initialState: UserScheme = {
@@ -25,6 +26,13 @@ export const userSlice = createSlice({
             state.authData = undefined;
             localStorage.removeItem(USER_LOCALSTORAGE_KEY);
         },
+    },
+    extraReducers: (builder) => {
+        builder.addCase(updateUserAvatar.fulfilled, (state, action: PayloadAction<User>) => {
+            if (state.authData) {
+                state.authData.avatar = action.payload.avatar;
+            }
+        });
     },
 });
 

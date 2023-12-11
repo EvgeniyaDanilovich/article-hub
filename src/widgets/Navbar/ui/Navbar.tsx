@@ -16,10 +16,23 @@ export const Navbar = memo(({ className }:NavbarProps) => {
     const { t } = useTranslation();
     const authData = useSelector(selectUserAuthData);
     const dispatch = useDispatch();
+    const [isLogIn, setIsLogIn] = useState(false);
 
     const onToggleModal = useCallback(() => {
         setIsOpenModal((prev) => !prev);
     }, []);
+
+    const onToggleLogInModal = useCallback(() => {
+        setIsLogIn(true);
+        onToggleModal();
+        // setIsOpenModal((prev) => !prev);
+    }, [onToggleModal]);
+
+    const onToggleSignUpModal = useCallback(() => {
+        setIsLogIn(false);
+        onToggleModal();
+        // setIsOpenModal((prev) => !prev);
+    }, [onToggleModal]);
 
     const onLogout = useCallback(() => {
         dispatch(userActions.logout());
@@ -42,13 +55,20 @@ export const Navbar = memo(({ className }:NavbarProps) => {
     return (
         <header className={classNames(cls.Navbar, {}, [])}>
             <Button
-                onClick={onToggleModal}
+                onClick={onToggleLogInModal}
                 theme={ButtonTheme.CLEAR}
                 size={ButtonSize.M}
             >
                 {t('Log in')}
             </Button>
-            {isOpenModal && <LoginModal isOpen={isOpenModal} onClose={onToggleModal} />}
+            <Button
+                onClick={onToggleSignUpModal}
+                theme={ButtonTheme.CLEAR}
+                size={ButtonSize.M}
+            >
+                {t('Sign up')}
+            </Button>
+            {isOpenModal && <LoginModal isOpen={isOpenModal} onClose={onToggleModal} isLogIn={isLogIn} />}
         </header>
     );
 });

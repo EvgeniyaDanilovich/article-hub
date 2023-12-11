@@ -15,6 +15,17 @@ export const Avatar: React.FC<AvatarProps> = ({ className, src, alt = 'Avatar', 
         height: size,
     }), [size]);
 
+    if (!src) {
+        return (
+            <img
+                src="https://vyshnevyi-partners.com/wp-content/uploads/2016/12/no-avatar.png"
+                alt={alt}
+                style={styles}
+                className={classNames(cls.Avatar, {}, [className])}
+            />
+        );
+    }
+
     return (
         <img
             src={src}

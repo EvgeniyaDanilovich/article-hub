@@ -19,18 +19,32 @@
       "username": "katya",
       "password": "123",
       "role": "USER",
-      "avatar": "https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Dog-512.png"
+      "avatar": "https://img.freepik.com/premium-vector/cute-horse-ponny-colourfull-vector_636967-241.jpg"
+    },
+    {
+      "username": "agent",
+      "password": "123",
+      "role": "USER",
+      "avatar": "",
+      "id": "Z7JEt9C"
+    },
+    {
+      "username": "road",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://media.izi.travel/042f9c2d-ae42-4537-9bc3-0d8912869fba/5c50daf8-68c7-41ab-b3d0-9c293b9c7221_800x600.jpg",
+      "id": "I4_pqRb"
     }
   ],
   "profile": [
     {
       "id": "1",
-      "first": "Evgeniya",
+      "first": "Eva",
       "lastname": "Di",
-      "age": 23,
+      "age": 24,
       "city": "Grodno",
       "username": "admin",
-      "avatar": "https://image.winudf.com/v2/image1/Y29tLmFoZXB0b24ubmF0dXJld2FsbHBhcGVyc19zY3JlZW5fMF8xNTUwNDMxMzYzXzA3NQ/screen-0.webp?fakeurl=1&type=.webp",
+      "avatar": "https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Dog-512.png",
       "currency": "USD",
       "country": "Belarus"
     },
@@ -44,6 +58,17 @@
       "avatar": "https://img.freepik.com/premium-vector/cute-horse-ponny-colourfull-vector_636967-241.jpg",
       "currency": "USD",
       "country": "Belarus"
+    },
+    {
+      "id": "I4_pqRb",
+      "first": "road",
+      "lastname": "fill",
+      "city": "GET",
+      "username": "",
+      "avatar": "https://media.izi.travel/042f9c2d-ae42-4537-9bc3-0d8912869fba/5c50daf8-68c7-41ab-b3d0-9c293b9c7221_800x600.jpg",
+      "currency": "RUB",
+      "country": "Russia",
+      "age": 2
     }
   ],
   "articles": [
@@ -1530,6 +1555,36 @@
       "userId": "1",
       "text": "sca",
       "id": "Z77fQ0V"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "hhh",
+      "id": "0bqMP0C"
+    },
+    {
+      "articleId": "2",
+      "userId": "2",
+      "text": "new",
+      "id": "BekOTup"
+    },
+    {
+      "articleId": "2",
+      "userId": "I4_pqRb",
+      "text": "hello",
+      "id": "9uDSLbG"
+    },
+    {
+      "articleId": "2",
+      "userId": "I4_pqRb",
+      "text": "one else",
+      "id": "w4cnDxw"
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "jhbj",
+      "id": "STqY2HW"
     }
   ]
 }

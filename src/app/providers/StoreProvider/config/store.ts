@@ -3,7 +3,6 @@ import { StateSchema, ThunkExtraArg } from 'app/providers/StoreProvider/config/s
 import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
-import { NavigateOptions, To } from 'react-router-dom';
 import { createReducerManager } from './reducerMenager';
 
 export function createReduxStore(

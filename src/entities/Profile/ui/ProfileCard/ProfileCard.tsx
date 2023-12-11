@@ -77,8 +77,7 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
             {readonly
                 ? (
                     <>
-                        {/* eslint-disable-next-line i18next/no-literal-string */}
-                        {data?.avatar && <Avatar src={data?.avatar} alt="Avatar" size={150} />}
+                        <Avatar src={data?.avatar} alt={t('Avatar')} size={150} />
                         <div className={cls.row}>
                             <Text text={t('Your name')} theme={TextTheme.BLACK} />
                             <Text text={`: ${data?.first}`} theme={TextTheme.BLACK} />
