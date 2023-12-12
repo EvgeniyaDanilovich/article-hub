@@ -1,10 +1,11 @@
 import React, { memo, useCallback, useState } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, ButtonColor, ButtonFontFamily, ButtonFontSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { LoginModal } from 'features/AuthByUserName';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectUserAuthData, userActions } from 'entities/User';
+import ArrowIcon from 'shared/assets/icons/arrow.svg';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -44,8 +45,12 @@ export const Navbar = memo(({ className }:NavbarProps) => {
                 <Button
                     onClick={onLogout}
                     theme={ButtonTheme.CLEAR}
-                    size={ButtonSize.M}
+                    fontSize={ButtonFontSize.four}
+                    fontFamily={ButtonFontFamily.TEXT}
+                    className={cls.btn}
+                    color={ButtonColor.LINK}
                 >
+                    <ArrowIcon className={cls.icon} />
                     {t('Log out')}
                 </Button>
             </header>
@@ -57,14 +62,18 @@ export const Navbar = memo(({ className }:NavbarProps) => {
             <Button
                 onClick={onToggleLogInModal}
                 theme={ButtonTheme.CLEAR}
-                size={ButtonSize.M}
+                fontSize={ButtonFontSize.four}
+                color={ButtonColor.LINK}
+                fontFamily={ButtonFontFamily.TEXT}
             >
                 {t('Log in')}
             </Button>
             <Button
                 onClick={onToggleSignUpModal}
                 theme={ButtonTheme.CLEAR}
-                size={ButtonSize.M}
+                fontSize={ButtonFontSize.four}
+                color={ButtonColor.LINK}
+                fontFamily={ButtonFontFamily.TEXT}
             >
                 {t('Sign up')}
             </Button>

@@ -1,7 +1,9 @@
 .Button {
-    color: var(--primary-color);
     cursor: pointer;
-    padding: 5px 15px;
+    border-radius: 8px;
+    white-space: nowrap;
+    text-transform: uppercase;
+    font-weight: 500;
 
     &:hover {
         opacity: 0.8;
@@ -10,11 +12,28 @@
     }
 }
 
+.little {
+    padding: 6px 25px;
+}
+
+.large {
+    padding: 10px 20px;
+}
+
+.primary_color {
+    color: var(--primary-color);
+}
+
+.link_color {
+    color: var(--link-color);
+}
+
 .clear {
     padding: 0;
     border: none;
     background: none;
     outline: none;
+    text-transform: none;
 }
 
 .disabled {
@@ -34,15 +53,23 @@
 }
 
 .background {
-    background-color: var(--bg-color);
-    color: var(--primary-color);
+    background-color: var(--bg-color-btn);
+    color: var(--inverted-primary-color);
     border: none;
 }
 
 .backgroundInverted {
-    background-color: var(--inverted-bg-color);
+    background-color: var(--bg-color-aside);
     color: var(--inverted-primary-color);
     border: none;
+}
+
+.font_text {
+    font-family: var(--font-family-text);
+}
+
+.font_title {
+    font-family: var(title);
 }
 
 .size_m {
@@ -51,4 +78,36 @@
 
 .size_l {
     font: var(--font-l);
+}
+
+.size_one {
+    font-size: var(--font-size-one);
+}
+
+.size_two {
+    font-size: var(--font-size-two);
+}
+
+.size_three {
+    font-size: var(--font-size-three);
+}
+
+.size_four {
+    font-size: var(--font-size-four);
+}
+
+.size_five {
+    font-size: var(--font-size-five);
+}
+
+.size_six {
+    font-size: var(--font-size-six);
+}
+
+.size_seven {
+    font-size: var(--font-size-seven);
+}
+
+.size_eight {
+    font-size: var(--font-size-eight);
 }

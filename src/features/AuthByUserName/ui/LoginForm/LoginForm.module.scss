@@ -2,6 +2,12 @@
     display: flex;
     flex-direction: column;
     row-gap: 15px;
+    padding: 50px 30px;
+    width: 400px;
+}
+
+.title {
+    margin-bottom: 20px;
 }
 
 .loginBtn {

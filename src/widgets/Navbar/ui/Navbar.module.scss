@@ -1,12 +1,25 @@
 .Navbar {
     display: flex;
+    column-gap: 20px;
     justify-content: flex-start;
     align-items: center;
-    width: 100%;
+    width: var(--sidebar-width);
     height: var(--navbar-height);
-    background: var(--inverted-bg-color);
+    background: var(--bg-color-aside);
+    padding: 10px 35px;
 }
 
 .mainLink {
     margin-right: 20px;
+}
+
+.icon {
+    margin-right: 10px;
+    fill: var(--link-color);
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
 }

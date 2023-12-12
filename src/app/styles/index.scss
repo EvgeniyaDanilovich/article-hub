@@ -5,13 +5,14 @@
 @import "./themes/orange";
 
 body {
-    font: var(--font-m);
+    font-size: var(--font-size-three);
     color: var(--primary-color);
+    box-sizing: border-box;
 }
 
 .app {
     min-height: 100vh;
-    background-color: var(--bg-color);
+    background-color: var(--bg-color-main);
 }
 
 .content-page {

@@ -1,7 +1,8 @@
 import React, { memo, useCallback } from 'react';
 import { Select } from 'shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
-import { Country } from 'entities/Country/model/types/country';
+import { Country } from '../../model/types/country';
+import cls from './CountrySelect.module.scss';
 
 interface CountrySelectProps {
     value?: Country;
@@ -25,8 +26,9 @@ export const CountrySelect = memo(({ value, onChange }: CountrySelectProps) => {
         <Select
             options={options}
             value={value}
-            label={t('Country')}
+            // label={t('Country')}
             onChange={onChangeHandler}
+            className={cls.select}
         />
     );
 });

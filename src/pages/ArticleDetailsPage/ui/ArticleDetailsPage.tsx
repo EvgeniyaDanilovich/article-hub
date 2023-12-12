@@ -5,14 +5,16 @@ import { useTranslation } from 'react-i18next';
 import { ArticleDetails } from 'entities/Article';
 import { useNavigate, useParams } from 'react-router-dom';
 import { CommentsList } from 'entities/Comment';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextSize } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { AddCommentForm } from 'features/AddCommentForm';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'shared/ui/Page/Page';
+import ArrowIcon from 'shared/assets/icons/arrow.svg';
+import { Icon } from 'shared/ui/Icon/Icon';
 import { addCommentForArticle } from '../model/services/addCommentForArticle/addCommentForArticle';
 import { selectArticleCommentsError, selectArticleCommentsIsLoading } from '../model/selectors/comments';
 import { articleDetailsCommentsReducer, selectArticleComments } from '../model/slice/articleDetailsCommentsSlice';
@@ -60,9 +62,12 @@ const ArticleDetailsPage = memo(({ className }: ArticleDetailsPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
-                <Button onClick={onBackToList}>{t('Back to list')}</Button>
+                <Button onClick={onBackToList} theme={ButtonTheme.CLEAR} className={cls.backBtn}>
+                    <Icon Svg={ArrowIcon} />
+                    {t('Back to list')}
+                </Button>
                 <ArticleDetails articleId={id} />
-                <Text title={t('Comments')} className={cls.commentTitle} />
+                <Text title={t('Comments')} className={cls.commentTitle} size={TextSize.four} />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentsList comments={comments} isLoading={commentsIsLoading} />
             </Page>

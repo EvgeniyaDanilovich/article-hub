@@ -1,10 +1,10 @@
 import React, { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { useSelector } from 'react-redux';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextSize, TextTheme, TextWeight } from 'shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Loader } from 'shared/ui/Loader/Loader';
@@ -53,7 +53,13 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
-                <Text title={t('Authorization form')} />
+                <Text
+                    title={t('Authorization form')}
+                    size={TextSize.five}
+                    weight={TextWeight.SEMIBOLD}
+                    align={TextAlign.CENTER}
+                    className={cls.title}
+                />
                 {error && <Text text={t('Wrong name or password')} theme={TextTheme.ERROR} />}
 
                 <Input onChange={onChangeUsername} placeholder={t('Enter name')} type="text" value={username} />
@@ -64,6 +70,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     theme={ButtonTheme.OUTLINE}
                     disabled={isLoading}
                     className={cls.loginBtn}
+                    size={ButtonSize.LITTLE}
                 >
                     {t('Log in')}
                 </Button>

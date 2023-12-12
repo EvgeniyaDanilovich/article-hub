@@ -1,8 +1,25 @@
 .ProfileCard {
-    border: 1px solid var(--inverted-bg-color);
-    padding: 20px;
+    display: flex;
+}
+
+.avatar {
+    margin-right: 50px;
+}
+
+.fieldsArea {
+    width: 100%;
 }
 
 .row {
+    max-width: 470px;
     display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    height: 32px;
+}
+
+.fieldName {
+    flex: 0 0 140px;
+    margin: 0 20px 0 0;
+    text-transform: uppercase;
 }

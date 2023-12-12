@@ -74,88 +74,92 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
     return (
         <div className={classNames(cls.ProfileCard, {}, [className])}>
-            {readonly
-                ? (
-                    <>
-                        <Avatar src={data?.avatar} alt={t('Avatar')} size={150} />
-                        <div className={cls.row}>
-                            <Text text={t('Your name')} theme={TextTheme.BLACK} />
-                            <Text text={`: ${data?.first}`} theme={TextTheme.BLACK} />
-                        </div>
-                        <div className={cls.row}>
-                            <Text text={t('Your lastname')} theme={TextTheme.BLACK} />
-                            <Text text={`: ${data?.lastname}`} theme={TextTheme.BLACK} />
-                        </div>
-                        <div className={cls.row}>
-                            <Text text={t('Age')} theme={TextTheme.BLACK} />
-                            <Text text={`: ${data?.age}`} theme={TextTheme.BLACK} />
-                        </div>
-                        <div className={cls.row}>
-                            <Text text={t('City')} theme={TextTheme.BLACK} />
-                            <Text text={`: ${data?.city}`} theme={TextTheme.BLACK} />
-                        </div>
-                        <div className={cls.row}>
-                            <Text text={t('User name')} theme={TextTheme.BLACK} />
-                            <Text text={`: ${data?.username}`} theme={TextTheme.BLACK} />
-                        </div>
-                        <div className={cls.row}>
-                            <Text text={t('Currency')} theme={TextTheme.BLACK} />
-                            <Text text={`: ${data?.currency}`} theme={TextTheme.BLACK} />
-                        </div>
-                        <div className={cls.row}>
-                            <Text text={t('Country')} theme={TextTheme.BLACK} />
-                            <Text text={`: ${data?.country}`} theme={TextTheme.BLACK} />
-                        </div>
-                    </>
-                )
-                : (
-                    <>
-                        <Input
-                            onChange={onChangeFirst}
-                            type="text"
-                            value={formData?.first}
-                            className={cls.input}
-                            placeholder={t('Your name')}
-                        />
-                        <Input
-                            onChange={onChangeLastname}
-                            type="text"
-                            value={formData?.lastname}
-                            className={cls.input}
-                            placeholder={t('Your lastname')}
-                        />
-                        <Input
-                            onChange={onChangeAge}
-                            type="text"
-                            value={formData?.age}
-                            className={cls.input}
-                            placeholder={t('Age')}
-                        />
-                        <Input
-                            onChange={onChangeCity}
-                            type="text"
-                            value={formData?.city}
-                            className={cls.input}
-                            placeholder={t('City')}
-                        />
-                        <Input
-                            onChange={onChangeUsername}
-                            type="text"
-                            value={formData?.username}
-                            className={cls.input}
-                            placeholder={t('Username')}
-                        />
-                        <Input
-                            onChange={onChangeAvatar}
-                            type="text"
-                            value={formData?.avatar}
-                            className={cls.input}
-                            placeholder={t('Enter link to avatar')}
-                        />
-                        <CurrencySelect value={formData?.currency} onChange={onChangeCurrency} />
-                        <CountrySelect value={formData?.country} onChange={onChangeCountry} />
-                    </>
-                )}
+            <Avatar src={data?.avatar} alt={t('Avatar')} size={150} className={cls.avatar} />
+
+            <div className={cls.fieldsArea}>
+                <div className={cls.row}>
+                    <Text text={`${t('Your name')}:`} theme={TextTheme.SECONDARY} className={cls.fieldName} />
+                    {readonly
+                        ? <Text text={`${data?.first}`} />
+                        : (
+                            <Input
+                                onChange={onChangeFirst}
+                                type="text"
+                                value={formData?.first}
+                                className={cls.input}
+                                placeholder={t('Your name')}
+                            />
+                        )}
+                </div>
+                <div className={cls.row}>
+                    <Text text={`${t('Your lastname')}:`} theme={TextTheme.SECONDARY} className={cls.fieldName} />
+                    {readonly
+                        ? <Text text={`${data?.lastname}`} />
+                        : (
+                            <Input
+                                onChange={onChangeLastname}
+                                type="text"
+                                value={formData?.lastname}
+                                className={cls.input}
+                                placeholder={t('Your lastname')}
+                            />
+                        )}
+                </div>
+                <div className={cls.row}>
+                    <Text text={`${t('User name')}:`} theme={TextTheme.SECONDARY} className={cls.fieldName} />
+                    {readonly
+                        ? <Text text={`${data?.username}`} />
+                        : (
+                            <Input
+                                onChange={onChangeUsername}
+                                type="text"
+                                value={formData?.username}
+                                className={cls.input}
+                                placeholder={t('Username')}
+                            />
+                        )}
+                </div>
+                <div className={cls.row}>
+                    <Text text={`${t('Age')}:`} theme={TextTheme.SECONDARY} className={cls.fieldName} />
+                    {readonly
+                        ? <Text text={`${data?.age}`} />
+                        : (
+                            <Input
+                                onChange={onChangeAge}
+                                type="text"
+                                value={formData?.age}
+                                className={cls.input}
+                                placeholder={t('Age')}
+                            />
+                        )}
+                </div>
+                <div className={cls.row}>
+                    <Text text={`${t('Country')}:`} theme={TextTheme.SECONDARY} className={cls.fieldName} />
+                    {readonly
+                        ? <Text text={`${data?.country}`} />
+                        : <CountrySelect value={formData?.country} onChange={onChangeCountry} />}
+                </div>
+                <div className={cls.row}>
+                    <Text text={`${t('City')}:`} theme={TextTheme.SECONDARY} className={cls.fieldName} />
+                    {readonly
+                        ? <Text text={`${data?.city}`} />
+                        : (
+                            <Input
+                                onChange={onChangeCity}
+                                type="text"
+                                value={formData?.city}
+                                className={cls.input}
+                                placeholder={t('City')}
+                            />
+                        )}
+                </div>
+                <div className={cls.row}>
+                    <Text text={`${t('Currency')}:`} theme={TextTheme.SECONDARY} className={cls.fieldName} />
+                    {readonly
+                        ? <Text text={`${data?.currency}`} />
+                        : <CurrencySelect value={formData?.currency} onChange={onChangeCurrency} />}
+                </div>
+            </div>
         </div>
     );
 });

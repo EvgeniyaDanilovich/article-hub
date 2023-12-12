@@ -1,11 +1,11 @@
 import React, { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Input } from 'shared/ui/Input/Input';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { Textarea } from 'shared/ui/Textarea/Textarea';
 import { selectAddCommentFormCommentText } from '../../models/selectors/addCommentForm';
 import { addCommentFormActions, addCommentFormReducer } from '../../models/slice/addCommentFormSlice';
 import cls from './AddCommentForm.module.scss';
@@ -36,14 +36,19 @@ const AddCommentForm = memo(({ onSendComment, className }: AddCommentFormProps) 
     return (
         <DynamicModuleLoader reducers={reducers}>
             <div className={classNames(cls.AddCommentForm, {}, [className])}>
-                <Input
+                <Textarea
                     onChange={onChange}
                     value={commentText}
                     placeholder={t('Enter comment text')}
-                    className={cls.input}
-                    type="text"
                 />
-                <Button onClick={onSendHandler} theme={ButtonTheme.OUTLINE}>{t('Send')}</Button>
+                <Button
+                    onClick={onSendHandler}
+                    theme={ButtonTheme.BACKGROUND}
+                    size={ButtonSize.LITTLE}
+                    className={cls.sendBtn}
+                >
+                    {t('Send')}
+                </Button>
             </div>
         </DynamicModuleLoader>
     );

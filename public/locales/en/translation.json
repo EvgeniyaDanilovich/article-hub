@@ -1,5 +1,5 @@
 {
-  "lang": "lang",
+  "lang": "ru",
   "page not found": "Page not found",
   "something went wrong": "Something went wrong",
   "reload page": "Reload page",
@@ -17,5 +17,7 @@
   "Log out": "Log out",
   "Enter comment text": "Enter comment text",
   "Send": "Send",
-  "Sign up": "Sign up"
+  "Sign up": "Sign up",
+  "Сhange theme": "Сhange theme",
+  "Registration form": "Registration form"
 }

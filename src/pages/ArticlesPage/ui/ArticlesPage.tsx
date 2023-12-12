@@ -8,6 +8,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { ViewSwitcher } from 'widgets/ViewSwitcher';
 import { Page } from 'shared/ui/Page/Page';
+import { Text, TextSize, TextWeight } from 'shared/ui/Text/Text';
 import { fetchNextArticlesPage } from '../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { articlesPageActions, articlesPageReducer, selectArticles } from '../model/slices/articlesPageSlice';
 import { selectArticlePageIsLoading, selectArticlePageView } from '../model/selectors/articlesPageSelectors';
@@ -51,8 +52,16 @@ const ArticlesPage = memo(({ className }: ArticlesPageProps) => {
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
-                {t('Articles')}
-                <ViewSwitcher view={view} onViewClick={onViewClick} />
+                <div className={cls.header}>
+                    <Text
+                        title={t('Articles')}
+                        size={TextSize.seven}
+                        className={cls.title}
+                        weight={TextWeight.SEMIBOLD}
+                    />
+                    <ViewSwitcher view={view} onViewClick={onViewClick} />
+                </div>
+
                 <ArticleList
                     isLoading={isLoading}
                     view={view}

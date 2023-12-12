@@ -1,13 +1,18 @@
 .ArticleDetails {
     border: none;
+    width: 100%;
 }
 
 .avatar {
-    margin: 0 auto;
+    margin-bottom: 30px;
 }
 
 .title {
     margin-top: 20px;
+}
+
+.subTitle {
+    margin: 10px 0 15px;
 }
 
 .skeleton {

@@ -19,11 +19,13 @@
   "Country": "",
   "Currency": "",
   "Edit": "",
+  "Embark on a journey of endless curiosity and self-discovery": "Embark on a journey of endless curiosity and self-discovery",
   "Enter comment text": "Enter comment text",
   "Enter link to avatar": "",
   "Enter name": "Enter name",
   "Enter password": "Enter password",
   "Error": "",
+  "Explore, dream, discover": "Explore, dream, discover",
   "Incorrect age": "",
   "Incorrect country": "",
   "Incorrect user data": "",
@@ -34,6 +36,7 @@
   "No data": "",
   "Profile": "Profile",
   "Read more": "Read more",
+  "Registration form": "Registration form",
   "Reload page": "",
   "Save": "",
   "Send": "Send",
@@ -43,6 +46,7 @@
   "Somthing went wrong": {
     " Read page": " Read page"
   },
+  "Start reading": "Start reading",
   "Throw bug": "",
   "User name": "",
   "Username": "",
@@ -50,11 +54,13 @@
   "Your lastname": "",
   "Your name": "",
   "about page": "",
+  "background": "background",
   "lang": "",
   "main page": "",
   "page not found": "",
   "reload page": "",
   "something went wrong": "",
   "toggle": "",
-  "tryTest": ""
+  "tryTest": "",
+  "Сhange theme": "Сhange theme"
 }

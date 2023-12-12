@@ -2,6 +2,7 @@ import React, { memo, useCallback } from 'react';
 import { Select } from 'shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
 import { Currency } from '../../model/types/currency';
+import cls from './CurrencySelect.module.scss';
 
 interface CurrencySelectProps {
     value?: Currency;
@@ -25,8 +26,9 @@ export const CurrencySelect = memo(({ value = Currency.BYN, onChange }: Currency
         <Select
             options={options}
             value={value}
-            label={t('Currency')}
+            // label={t('Currency')}
             onChange={onChangeHandler}
+            className={cls.select}
         />
     );
 });

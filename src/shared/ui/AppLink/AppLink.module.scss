@@ -1,13 +1,24 @@
 .AppLink {
-    color: var(--primary-color);
+    color: var(--link-color);
+    text-decoration: none;
+
+    &.active {
+        color: var(--bg-color-secondary);
+        background-color: var(--bg-color-secondary);
+    }
 
     &:hover {
         opacity: 0.8;
     }
 }
 
+a.active {
+    color: var(--bg-color-secondary);
+    background-color: var(--bg-color-secondary);
+}
+
 .primary {
-    color: var(--primary-color);
+    color: var(--inverted-primary-color);
 }
 
 .secondary {

@@ -1,8 +1,8 @@
 import React, { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextSize, TextWeight } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -12,7 +12,7 @@ import { selectLoginPassword } from '../../model/selectors/selectLoginPassword/s
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { addNewUser } from '../../model/services/addNewUser/addNewUser';
 import { selectLoginIsLoading } from '../../model/selectors/selectLoginIsLoading/selectLoginIsLoading';
-import cls from '../LoginForm/LoginForm.module.scss';
+import cls from './SignupForm.module.scss';
 
 export interface SignupFormProps {
     className?: string;
@@ -39,8 +39,6 @@ const SignupForm = memo(({ className, onSuccess }: SignupFormProps) => {
     }, [dispatch]);
 
     const onSendData = useCallback(() => {
-        console.log(username);
-        console.log(password);
         dispatch(addNewUser({ username, password }));
         onSuccess();
     }, [dispatch, onSuccess, password, username]);
@@ -48,7 +46,13 @@ const SignupForm = memo(({ className, onSuccess }: SignupFormProps) => {
     return (
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <div className={classNames(cls.SignupForm, {}, [className])}>
-                <Text title={t('Authorization form')} />
+                <Text
+                    title={t('Registration form')}
+                    size={TextSize.six}
+                    weight={TextWeight.SEMIBOLD}
+                    align={TextAlign.CENTER}
+                    className={cls.title}
+                />
 
                 <Input onChange={onChangeUsername} placeholder={t('Enter name')} type="text" value={username} />
                 <Input onChange={onChangePassword} type="text" placeholder={t('Enter password')} value={password} />
@@ -58,6 +62,7 @@ const SignupForm = memo(({ className, onSuccess }: SignupFormProps) => {
                     theme={ButtonTheme.OUTLINE}
                     disabled={isLoading}
                     className={cls.loginBtn}
+                    size={ButtonSize.LITTLE}
                 >
                     {t('Sign up')}
                 </Button>

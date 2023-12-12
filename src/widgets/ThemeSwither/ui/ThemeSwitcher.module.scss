@@ -1,11 +1,10 @@
 .ThemeSwitcher {
+    display: flex;
+    align-items: center;
     background: none;
 }
 
-.dark g {
-    fill: #0e1a3e;
-}
-
-.light g {
-    fill: #d9de15;
+.theme {
+    margin-right: 10px;
+    fill: var(--link-color);
 }

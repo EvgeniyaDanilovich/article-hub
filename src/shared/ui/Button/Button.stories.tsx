@@ -2,7 +2,7 @@ import type { Meta } from '@storybook/react';
 import { StoryObj } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Button, ButtonSize, ButtonTheme } from './Button';
+import { Button, ButtonFontSize, ButtonTheme } from './Button';
 
 const meta: Meta<typeof Button> = {
     title: 'shared/Button',
@@ -41,7 +41,7 @@ export const OutlineSizeM: Story = {
     args: {
         children: 'Text',
         theme: ButtonTheme.OUTLINE,
-        size: ButtonSize.M,
+        fontSize: ButtonFontSize.M,
     },
 };
 
@@ -49,7 +49,7 @@ export const OutlineSizeL: Story = {
     args: {
         children: 'Text',
         theme: ButtonTheme.OUTLINE,
-        size: ButtonSize.L,
+        fontSize: ButtonFontSize.L,
     },
 };
 

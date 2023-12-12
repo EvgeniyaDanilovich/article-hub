@@ -1,10 +1,10 @@
 import React, { memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { ArticleView } from 'entities/Article';
-import ListIcon from 'shared/assets/icons/eye.svg';
-import TiledIcon from 'shared/assets/icons/calendar.svg';
+import ListIcon from 'shared/assets/icons/list.svg';
+import TiledIcon from 'shared/assets/icons/tile.svg';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { Icon, IconColor } from 'shared/ui/Icon/Icon';
 import cls from './ViewSwitcher.module.scss';
 
 interface ViewSwitcherProps {
@@ -39,6 +39,7 @@ export const ViewSwitcher = memo(({ view, onViewClick, className }: ViewSwitcher
                 >
                     <Icon
                         Svg={viewType.icon}
+                        color={IconColor.SECONDARY}
                         className={classNames('', { [cls.selected]: viewType.view === view })}
                     />
                 </Button>

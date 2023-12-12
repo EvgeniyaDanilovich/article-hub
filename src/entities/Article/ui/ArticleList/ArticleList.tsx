@@ -18,29 +18,17 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const { t } = useTranslation('article');
     const { articles, isLoading, view = ArticleView.SMALL, className } = props;
 
-    // if (isLoading) {
-    //     return (
-    //         <div className={classNames(cls.ArticleList, {}, [className])}>
-    //             {
-    //                 new Array(view === ArticleView.SMALL ? 9 : 3)
-    //                     .fill(0)
-    //                     .map((item, index) => (
-    //                         <ArticleListItemSkeleton view={view} key={index} />
-    //                     ))
-    //             }
-    //         </div>
-    //     );
-    // }
-
     const renderArticle = (article: Article) => {
         return <ArticleListItem article={article} view={view} key={article.id} />;
     };
 
+    if (!isLoading && !articles.length) {
+        return (<Text text={t('Articles not found')} />);
+    }
+
     return (
         <div className={classNames(cls.ArticleList, {}, [className])}>
-            {articles.length > 0
-                ? articles.map(renderArticle)
-                : <Text text={t('Articles not found')} />}
+            {articles.map(renderArticle)}
             {isLoading && new Array(view === ArticleView.SMALL ? 9 : 3)
                 .fill(0)
                 .map((item, index) => (

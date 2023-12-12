@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
+import { Text, TextSize, TextWeight } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -39,7 +39,7 @@ export const ProfilePageHeader: React.FC<ProfilePageHeaderProps> = ({ className 
 
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
-            <Text title={t('Profile')} />
+            <Text title={t('Profile')} weight={TextWeight.SEMIBOLD} size={TextSize.six} />
             {
                 canEdit && (
                     <div className={cls.btnWrapper}>
@@ -47,7 +47,11 @@ export const ProfilePageHeader: React.FC<ProfilePageHeaderProps> = ({ className 
                             ? <Button theme={ButtonTheme.OUTLINE} onClick={onEdit}>{t('Edit')}</Button>
                             : (
                                 <div>
-                                    <Button onClick={onCancelEdit} theme={ButtonTheme.OUTLINE_RED}>
+                                    <Button
+                                        onClick={onCancelEdit}
+                                        theme={ButtonTheme.OUTLINE_RED}
+                                        className={cls.canselBtn}
+                                    >
                                         {t('Cancel')}
                                     </Button>
                                     <Button onClick={onSaveData} theme={ButtonTheme.OUTLINE}>{t('Save')}</Button>

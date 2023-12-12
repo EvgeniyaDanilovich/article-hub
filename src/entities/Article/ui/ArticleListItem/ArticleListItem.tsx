@@ -1,10 +1,10 @@
 import React, { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Text } from 'shared/ui/Text/Text';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
+import { Icon, IconColor } from 'shared/ui/Icon/Icon';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import { Card } from 'shared/ui/Card/Card';
-import { Button } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { useNavigate } from 'react-router-dom';
@@ -31,12 +31,12 @@ export const ArticleListItem = memo(({ article, view, className }: ArticleListIt
         (block) => block.type === ArticleBlockTypes.TEXT,
     ) as ArticleTextBlock;
 
-    const types = <Text text={article.type.join(', ')} className={cls.type} />;
+    const types = <Text text={article.type.join(', ')} className={cls.type} theme={TextTheme.SECONDARY} />;
     const views = (
-        <>
-            <Text text={String(article.views)} className={cls.views} />
-            <Icon Svg={EyeIcon} />
-        </>
+        <div className={cls.views}>
+            <Text text={String(article.views)} theme={TextTheme.SECONDARY} />
+            <Icon Svg={EyeIcon} color={IconColor.SECONDARY} />
+        </div>
     );
 
     if (view === ArticleView.LARGE) {
@@ -45,18 +45,30 @@ export const ArticleListItem = memo(({ article, view, className }: ArticleListIt
                 <Card>
                     <div className={cls.header}>
                         <Avatar src={article.user.avatar} size={30} className={cls.avatar} />
-                        <Text text={article.user.username} className={cls.username} />
+                        <Text title={article.user.username} className={cls.username} size={TextSize.three} />
                         <Text text={article.createdAt} className={cls.data} />
+                        {views}
                     </div>
 
+                    <img src={article.img} alt={article.title} className={cls.img} />
                     <Text title={article.title} className={cls.title} />
                     {types}
-                    <img src={article.img} alt={article.title} className={cls.img} />
-                    {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.paragraph} />}
 
                     <div className={cls.infoWrapper}>
-                        <Button onClick={onOpenArticle} className={cls.btnMore}>{t('Read more')}</Button>
-                        {views}
+                        {textBlock && (
+                            <ArticleTextBlockComponent
+                                block={textBlock}
+                                isShowTitle={false}
+                                className={cls.paragraph}
+                            />
+                        )}
+                        <Button
+                            onClick={onOpenArticle}
+                            className={cls.btnMore}
+                            theme={ButtonTheme.BACKGROUND}
+                        >
+                            {t('Read more')}
+                        </Button>
                     </div>
                 </Card>
             </div>
@@ -74,7 +86,7 @@ export const ArticleListItem = memo(({ article, view, className }: ArticleListIt
                     {types}
                     {views}
                 </div>
-                <Text text={article.title} className={cls.title} />
+                <Text title={article.title} className={cls.title} size={TextSize.three} />
             </Card>
         </div>
     );

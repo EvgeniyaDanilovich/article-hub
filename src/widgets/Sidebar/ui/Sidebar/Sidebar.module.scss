@@ -1,41 +1,45 @@
 .Sidebar {
-    box-sizing: border-box;
+    flex: 0 0 var(--sidebar-width);
+    min-width: var(--sidebar-width);
     position: relative;
     height: calc(100vh - var(--navbar-height));
-    width: var(--sidebar-width);
-    background: var(--inverted-bg-color);
+    background: var(--bg-color-aside);
     transition: width 0.3s ease;
-    padding: 20px;
-}
-
-.switchers {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    width: calc(100% - 40px);
-    bottom: 20px;
-    column-gap: 20px;
-}
-
-.collapsedButton {
-    position: absolute;
-    bottom: 20px;
-    right: -40px;
+    padding: 20px 20px 20px 35px;
+    border-top: 1px solid var(--bg-color-secondary);
 }
 
 .menu {
     display: flex;
     flex-direction: column;
-    row-gap: 10px;
-    margin: 0 0 0 15px;
+    row-gap: 3px;
+}
+
+.switchers {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    width: calc(100% - 40px);
+    bottom: 20px;
+    column-gap: 20px;
+    padding-top: 15px;
 }
 
 .collapsed {
-    width: var(--sidebar-width-collapsed);
+    flex: 0 1 var(--sidebar-width-collapsed);
+    min-width: var(--sidebar-width-collapsed);
+    padding: 20px;
 
     .switchers {
         flex-direction: column;
         align-items: center;
         row-gap: 10px;
     }
+}
+
+.collapsedButton {
+    position: absolute;
+    bottom: 20px;
+    right: -40px;
 }

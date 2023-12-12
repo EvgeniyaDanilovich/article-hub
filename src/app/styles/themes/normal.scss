@@ -1,11 +1,12 @@
-// .app.light
-
 .app_light_theme {
-    --bg-color: #dccdcd;
-    --inverted-bg-color: #0e1a3e;
-    --primary-color: #d400ff;
-    --secondary-color: #ffb937;
-    --inverted-primary-color: #46f1f1;
+    --bg-color-main: #f7f7f7;
+    --bg-color-aside: #e8e5e4;
+    --bg-color-secondary: #3c3c3c;
+    --bg-color-three: #405ced;
+    --bg-color-btn: #2a2a2a;
+    --primary-color: #2a2a2a;
+    --inverted-primary-color: #f7f7f7;
+    --secondary-color: #878787;
     --inverted-secondary-color: #499b49;
 
     // skeleton
@@ -16,5 +17,8 @@
     --code-bg: #fff;
 
     // card
-    --card-bg: #ecdddd;
+    --card-bg: #d7d4d3;
+
+    // link
+    --link-color: #2a2a2a;
 }

@@ -1,5 +1,5 @@
 {
-  "lang": "язык",
+  "lang": "en",
   "page not found": "Страница не найдена",
   "something went wrong": "Произошла непредвиденая ошибка",
   "reload page": "Перезагрузите страницу",
@@ -17,5 +17,7 @@
   "Log out": "Выйти",
   "Enter comment text": "Введите текст комментария",
   "Send": "Отправить",
-  "Sign up": "Sign up"
+  "Sign up": "Sign up",
+  "Сhange theme": "Сhange theme",
+  "Registration form": "Registration form"
 }

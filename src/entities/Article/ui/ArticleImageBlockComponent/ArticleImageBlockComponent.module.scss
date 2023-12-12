@@ -1,7 +1,12 @@
 .ArticleImageBlockComponent {
     border: none;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 40px 0;
 }
 
 .image {
     max-width: 100%;
+    align-self: center;
 }

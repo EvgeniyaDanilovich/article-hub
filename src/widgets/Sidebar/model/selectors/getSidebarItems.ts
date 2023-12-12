@@ -16,11 +16,11 @@ export const selectSidebarItems = createSelector(
                 text: 'Main',
                 Icon: MainIcon,
             },
-            {
-                path: RoutePath.about,
-                text: 'About',
-                Icon: AboutIcon,
-            },
+            // {
+            //     path: RoutePath.about,
+            //     text: 'About',
+            //     Icon: AboutIcon,
+            // },
         ];
 
         if (userData) {

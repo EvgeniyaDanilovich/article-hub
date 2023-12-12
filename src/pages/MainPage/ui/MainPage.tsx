@@ -1,41 +1,43 @@
-import React, { memo, useEffect, useState } from 'react';
+import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { BugButton } from 'app/providers/ErrorBoundary';
-import { Counter } from 'entities/Counter';
 import { Page } from 'shared/ui/Page/Page';
+import { Text, TextSize, TextWeight } from 'shared/ui/Text/Text';
+import { Button, ButtonFontFamily, ButtonFontSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { Theme, useTheme } from 'app/providers/ThemeProvider';
 import cls from './MainPage.module.scss';
+import BgImg from '../../../shared/assets/images/bg-main.png';
+import BgImgBlue from '../../../shared/assets/images/bg-main-blue.png';
 
 const MainPage = memo(() => {
     const { t } = useTranslation('main');
-    const [min, setMin] = useState(7);
-    const [sec, setSec] = useState(60);
-    // let sec = 60;
-
-    // useEffect(() => {
-    //
-    // }, [min, sec]);
-
-    setInterval(() => {
-        // if (sec === 0) {
-        //     // setSec(60);
-        //     // sec = 60;
-        //     // setMin(min - 1);
-        // } else {
-        //     console.log(sec);
-        //     // setSec(sec - 1);
-        // }
-        // setSec(sec - 1);
-    }, 1000);
+    const { theme, switchTheme } = useTheme();
 
     return (
-        <Page>
-            <BugButton />
-            {t('main page')}
-            <Counter />
-            <div className={cls.timer}>
-                <div className={cls.min}>{min}</div>
-                <div>:</div>
-                <div className={cls.sec}>{sec}</div>
+        <Page className={cls.MainPage}>
+            <div className={cls.firstBlock}>
+                <Text
+                    title={t('Explore, dream, discover')}
+                    size={TextSize.eight}
+                    className={cls.title}
+                    weight={TextWeight.BOLD}
+                />
+                <Text
+                    size={TextSize.five}
+                    text={t('Embark on a journey of endless curiosity and self-discovery')}
+                    className={cls.text}
+                />
+                <Button
+                    fontSize={ButtonFontSize.two}
+                    fontFamily={ButtonFontFamily.TITLE}
+                    theme={ButtonTheme.BACKGROUND}
+                    className={cls.btn}
+                >
+                    {t('Start reading')}
+                </Button>
+                {theme === Theme.ORANGE
+                    ? <img src={BgImg} alt={t('background')} className={cls.bgImg} />
+                    : <img src={BgImgBlue} alt={t('background')} className={cls.bgImg} />}
+
             </div>
         </Page>
     );

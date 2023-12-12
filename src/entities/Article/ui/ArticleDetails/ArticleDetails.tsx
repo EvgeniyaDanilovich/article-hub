@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useEffect } from 'react';
+import React, { memo, useCallback } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -9,15 +9,12 @@ import { Text, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye.svg';
-import { Icon } from 'shared/ui/Icon/Icon';
+import CalendarIcon from 'shared/assets/icons/calendar.svg';
+import { Icon, IconColor } from 'shared/ui/Icon/Icon';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import cls from './ArticleDetails.module.scss';
 import { articleDetailsReducer } from '../../model/slice/ArticleDetailsSlice';
-import {
-    selectArticleDetailsData,
-    selectArticleDetailsError,
-    selectArticleDetailsIsLoading,
-} from '../../model/selectors/articleDetails';
+import { selectArticleDetailsData, selectArticleDetailsError, selectArticleDetailsIsLoading } from '../../model/selectors/articleDetails';
 import { ArticleBlock, ArticleBlockTypes } from '../../model/types/article';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
@@ -52,12 +49,6 @@ export const ArticleDetails = memo(({ className, articleId }: ArticleDetailsProp
         }
     }, []);
 
-    // useEffect(() => {
-    //     if (__PROJECT__ !== 'storybook') {
-    //         dispatch(fetchArticleById(articleId));
-    //     }
-    // }, [articleId, dispatch]);
-
     useInitialEffect(() => {
         dispatch(fetchArticleById(articleId));
     });
@@ -68,7 +59,7 @@ export const ArticleDetails = memo(({ className, articleId }: ArticleDetailsProp
         content = (
             <>
                 <Skeleton height={150} width={150} border="50%" className={cls.avatar} />
-                <Skeleton height={32} width={300} className={cls.title} />
+                <Skeleton height={32} width={300} />
                 <Skeleton height={24} width={600} className={cls.skeleton} />
                 <Skeleton height={150} width="100%" className={cls.skeleton} />
                 <Skeleton height={150} width="100%" className={cls.skeleton} />
@@ -80,14 +71,15 @@ export const ArticleDetails = memo(({ className, articleId }: ArticleDetailsProp
         content = (
             <>
                 {article?.img && <Avatar src={article?.img} size={150} className={cls.avatar} />}
-                <Text title={article?.title} text={article?.subtitle} size={TextSize.L} />
+                <Text title={article?.title} size={TextSize.seven} />
+                <Text text={article?.subtitle} size={TextSize.six} className={cls.subTitle} />
                 <div className={cls.articleInfo}>
-                    <Icon Svg={EyeIcon} className={cls.icon} />
-                    <Text text={String(article?.views)} />
+                    <Icon Svg={EyeIcon} className={cls.icon} color={IconColor.SECONDARY} />
+                    <Text text={String(article?.views)} theme={TextTheme.SECONDARY} />
                 </div>
                 <div className={cls.articleInfo}>
-                    <Icon Svg={EyeIcon} className={cls.icon} />
-                    <Text text={article?.createdAt} />
+                    <Icon Svg={CalendarIcon} className={cls.icon} color={IconColor.SECONDARY} />
+                    <Text text={article?.createdAt} theme={TextTheme.SECONDARY} />
                 </div>
                 {article?.blocks?.map(renderBlock)}
             </>

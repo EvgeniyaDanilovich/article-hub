@@ -15,14 +15,14 @@ interface CommentsListProps {
 export const CommentsList = memo(({ comments, isLoading, className }: CommentsListProps) => {
     const { t } = useTranslation('article');
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.CommentsList, {}, [className])}>
-                <CommentCard isLoading={isLoading} />
-                <CommentCard isLoading={isLoading} />
-            </div>
-        );
-    }
+    // if (isLoading) {
+    //     return (
+    //         <div className={classNames(cls.CommentsList, {}, [className])}>
+    //             <CommentCard isLoading={isLoading} />
+    //             <CommentCard isLoading={isLoading} />
+    //         </div>
+    //     );
+    // }
 
     return (
         <div className={classNames(cls.CommentsList, {}, [className])}>
@@ -31,6 +31,12 @@ export const CommentsList = memo(({ comments, isLoading, className }: CommentsLi
                     <CommentCard comment={comment} isLoading={isLoading} key={comment.id} />
                 ))
                 : <Text text={t('No comments')} />}
+            {isLoading && (
+                <>
+                    <CommentCard isLoading={isLoading} />
+                    <CommentCard isLoading={isLoading} />
+                </>
+            )}
         </div>
     );
 });
