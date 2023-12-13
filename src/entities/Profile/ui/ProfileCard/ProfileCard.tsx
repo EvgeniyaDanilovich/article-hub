@@ -21,6 +21,8 @@ interface ProfileCardProps {
     readonly?: boolean;
 }
 
+// comment
+
 export const ProfileCard = memo((props: ProfileCardProps) => {
     const { className, data, formData, isLoading, error, readonly } = props;
     const { t } = useTranslation('profile');
