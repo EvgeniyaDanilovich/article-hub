@@ -3,12 +3,10 @@
   "page not found": "Страница не найдена",
   "something went wrong": "Произошла непредвиденая ошибка",
   "reload page": "Перезагрузите страницу",
-  "Throw bug": "Создать ошибку",
   "Main": "Главная",
   "About": "О нас",
   "Profile": "Профиль",
   "Articles": "Статьи",
-  "short lang": "ру",
   "Log in": "Войти",
   "Enter name": "Введите текст",
   "Enter password": "Введите пароль",
@@ -17,9 +15,8 @@
   "Log out": "Выйти",
   "Enter comment text": "Введите текст комментария",
   "Send": "Отправить",
-  "Sign up": "Sign up",
-  "Сhange theme": "Сhange theme",
-  "Registration form": "Registration form",
-  "Registration": "Registration",
-  "Authorization": "Authorization"
+  "Sign up": "Зарегестрироваться",
+  "Change theme": "Изменить тему",
+  "Registration": "Регистрация",
+  "Authorization": "Авторизация"
 }

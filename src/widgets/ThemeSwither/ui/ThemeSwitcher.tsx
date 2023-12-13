@@ -23,7 +23,7 @@ export const ThemeSwitcher = memo(({ className, short }: ThemeSwitcherProps) => 
             className={classNames(cls.ThemeSwitcher, {}, [])}
         >
             <ThemeIcon className={cls.theme} />
-            {!short && <Text text={t('Сhange theme')} theme={TextTheme.LINK} />}
+            {!short && <Text text={t('Change theme')} theme={TextTheme.LINK} />}
         </Button>
     );
 });
