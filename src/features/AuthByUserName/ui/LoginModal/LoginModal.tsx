@@ -7,11 +7,11 @@ import { SignupFormAsync } from '../SignupForm/SignupForm.async';
 interface LoginModalProps {
     isOpen: boolean;
     onClose: () => void;
-    isLogIn: boolean;
+    isLogIn?: boolean;
 }
 
 export const LoginModal: React.FC<LoginModalProps> = (props) => {
-    const { isOpen, onClose, isLogIn } = props;
+    const { isOpen, onClose, isLogIn = false } = props;
     // const dispatch = useAppDispatch();
     // const username = useSelector(selectLoginUsername);
     // const password = useSelector(selectLoginPassword);

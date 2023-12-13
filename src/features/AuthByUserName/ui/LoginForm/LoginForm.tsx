@@ -54,7 +54,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text
-                    title={t('Authorization form')}
+                    title={t('Authorization')}
                     size={TextSize.five}
                     weight={TextWeight.SEMIBOLD}
                     align={TextAlign.CENTER}

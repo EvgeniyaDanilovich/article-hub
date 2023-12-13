@@ -26,13 +26,11 @@ export const Navbar = memo(({ className }:NavbarProps) => {
     const onToggleLogInModal = useCallback(() => {
         setIsLogIn(true);
         onToggleModal();
-        // setIsOpenModal((prev) => !prev);
     }, [onToggleModal]);
 
     const onToggleSignUpModal = useCallback(() => {
         setIsLogIn(false);
         onToggleModal();
-        // setIsOpenModal((prev) => !prev);
     }, [onToggleModal]);
 
     const onLogout = useCallback(() => {

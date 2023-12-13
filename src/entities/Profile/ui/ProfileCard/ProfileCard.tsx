@@ -159,6 +159,19 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                         ? <Text text={`${data?.currency}`} />
                         : <CurrencySelect value={formData?.currency} onChange={onChangeCurrency} />}
                 </div>
+                {!readonly
+                    && (
+                        <div className={cls.row}>
+                            <Text text={`${t('Avatar')}:`} theme={TextTheme.SECONDARY} className={cls.fieldName} />
+                            <Input
+                                onChange={onChangeAvatar}
+                                type="text"
+                                value={formData?.avatar}
+                                className={cls.input}
+                                placeholder={t('Avatar')}
+                            />
+                        </div>
+                    )}
             </div>
         </div>
     );

@@ -47,8 +47,8 @@ const SignupForm = memo(({ className, onSuccess }: SignupFormProps) => {
         <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
             <div className={classNames(cls.SignupForm, {}, [className])}>
                 <Text
-                    title={t('Registration form')}
-                    size={TextSize.six}
+                    title={t('Registration')}
+                    size={TextSize.five}
                     weight={TextWeight.SEMIBOLD}
                     align={TextAlign.CENTER}
                     className={cls.title}

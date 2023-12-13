@@ -12,7 +12,7 @@
       "username": "eva",
       "password": "123",
       "role": "ADMIN",
-      "avatar": "https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Dog-512.png"
+      "avatar": "https://simple-fauna.ru/wp-content/uploads/2017/01/polyarnyj-belyj-medved.jpg"
     },
     {
       "id": "2",
@@ -44,7 +44,7 @@
       "age": 24,
       "city": "Grodno",
       "username": "admin",
-      "avatar": "https://cdn3.iconfinder.com/data/icons/avatars-9/145/Avatar_Dog-512.png",
+      "avatar": "https://simple-fauna.ru/wp-content/uploads/2017/01/polyarnyj-belyj-medved.jpg",
       "currency": "USD",
       "country": "Belarus"
     },
