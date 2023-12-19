@@ -22,7 +22,7 @@ React, Redux toolkit, TypeScript, SCSS, Webpack, i18n, storybook, jest, FSD.
 
 
 ## Screenshots
-### Menu page
+### Main page
 ![image](https://github.com/EvgeniyaDanilovich/articles-app/assets/68774339/59e2d6d9-ffc7-4991-b2d4-d56b80e14df6)
 ### Authorization
 ![image](https://github.com/EvgeniyaDanilovich/articles-app/assets/68774339/d6fb244f-d01d-489f-93d7-2eff62c3493a)
